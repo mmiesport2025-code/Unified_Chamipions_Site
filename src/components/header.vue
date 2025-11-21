@@ -1,11 +1,17 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <header class="bg-NoirPur text-Blanc w-full h-[120px] flex items-center justify-between px-24">
+  <header
+    class="bg-NoirPur text-Blanc w-full h-[70px] lg:h-[120px] flex items-center justify-between px-5 lg:px-24"
+  >
     <a href="/" class="flex items-center gap-4">
-      <img src="./image/LogoUnifiedChampions.png" alt="Logo" />
+      <img class="h-[50px] lg:h-[90px]" src="./image/LogoUnifiedChampions.png" alt="Logo" />
       <div>
-        <p class="font-Inter uppercase">Unite to win</p>
-        <p class="font-Sarabun">Unified Champions club</p>
+        <p class="font-Inter uppercase font-bold text-xl lg:text-3xl">Unite to win</p>
+        <p
+          class="font-Inter uppercase font-bold text-[7px] lg:text-[10px] tracking-[0.13rem] lg:tracking-[0.19rem]"
+        >
+          Unified Champions club
+        </p>
       </div>
     </a>
     <button class="lg:hidden">
