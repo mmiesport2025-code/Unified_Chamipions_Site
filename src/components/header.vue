@@ -1,4 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script setup lang="ts">
+import Hamburger from './icons/Hamburger.vue'
+</script>
+
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header
     class="bg-NoirPur text-Blanc w-full h-[70px] lg:h-[120px] flex items-center justify-between px-5 lg:px-24"
@@ -8,17 +13,17 @@
       <div>
         <p class="font-Inter uppercase font-bold text-xl lg:text-3xl">Unite to win</p>
         <p
-          class="font-Inter uppercase font-bold text-[7px] lg:text-[10px] tracking-[0.13rem] lg:tracking-[0.19rem]"
+          class="-mt-1 font-Inter uppercase font-bold text-[7px] lg:text-[10px] tracking-[0.13rem] lg:tracking-[0.19rem]"
         >
           Unified Champions club
         </p>
       </div>
     </a>
     <button class="lg:hidden">
-      <img src="" alt="Menu Icon" />
+      <Hamburger />
     </button>
     <nav class="hidden lg:block">
-      <ul class="flex gap-12">
+      <ul class="flex gap-12 text-xl font-Inter font-extrabold uppercase">
         <li><a href="">équipes</a></li>
         <li><a href="">à propos</a></li>
         <li><a href="">calendrier</a></li>

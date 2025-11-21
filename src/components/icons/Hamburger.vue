@@ -1,0 +1,8 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+<template>
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="30" height="4" fill="#D9D9D9" />
+    <rect y="13" width="30" height="4" fill="#D9D9D9" />
+    <rect y="26" width="30" height="4" fill="#D9D9D9" />
+  </svg>
+</template>
