@@ -4,13 +4,15 @@ import Header from './components/header.vue'
 import Footer from './components/footer.vue'
 </script>
 <template>
-  <Header />
-  <main class="">
-    <RouterView v-slot="{ Component }">
-      <Suspense>
-        <component :is="Component" :key="$route.path" />
-      </Suspense>
-    </RouterView>
-  </main>
+  <section>
+    <Header />
+    <main class="">
+      <RouterView v-slot="{ Component }">
+        <Suspense>
+          <component :is="Component" :key="$route.path" />
+        </Suspense>
+      </RouterView>
+    </main>
+  </section>
   <Footer />
 </template>
