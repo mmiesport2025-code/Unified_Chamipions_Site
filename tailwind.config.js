@@ -4,8 +4,8 @@ export default {
   theme: {
     colors: {
       Blanc: '#ffffff',
-      Noir: '#242729',
-      NoirPur: '#000000',
+      Noir: '#202024',
+      NoirPur: '#0c0b0bff',
       Violet: '#65298c',
       Violet700: '#ae47f2',
       Rose: '#c61e6a',
