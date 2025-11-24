@@ -1,14 +1,15 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import Hamburger from './icons/Hamburger.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header
-    class="bg-NoirPur text-Blanc w-full h-[70px] lg:h-[120px] flex items-center justify-between px-5 lg:px-24"
+    class="bg-NoirPur text-Blanc w-full h-[70px] lg:h-[120px] flex items-center justify-between px-5 lg:px-24 absolute"
   >
-    <a href="/" class="flex items-center gap-4">
+    <RouterLink to="/" class="flex items-center gap-4">
       <img class="h-[50px] lg:h-[90px]" src="./image/LogoUnifiedChampions.png" alt="Logo" />
       <div>
         <p class="font-Inter uppercase font-bold text-xl lg:text-3xl">Unite to win</p>
@@ -18,17 +19,17 @@ import Hamburger from './icons/Hamburger.vue'
           Unified Champions club
         </p>
       </div>
-    </a>
+    </RouterLink>
     <button class="lg:hidden">
       <Hamburger />
     </button>
     <nav class="hidden lg:block">
       <ul class="flex gap-12 text-xl font-Inter font-extrabold uppercase">
-        <li><a href="">équipes</a></li>
-        <li><a href="">à propos</a></li>
-        <li><a href="">calendrier</a></li>
-        <li><a href="">steam</a></li>
-        <li><a href="">candiater</a></li>
+        <li><RouterLink to="/Equipes/test">équipes</RouterLink></li>
+        <li><RouterLink to="/Apropos">à propos</RouterLink></li>
+        <li><RouterLink to="/calendrier">calendrier</RouterLink></li>
+        <li><RouterLink to="/stream">stream</RouterLink></li>
+        <li><RouterLink to="/candidature">candidature</RouterLink></li>
       </ul>
     </nav>
   </header>

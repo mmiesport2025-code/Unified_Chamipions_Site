@@ -6,7 +6,8 @@ import Footer from './components/footer.vue'
 <template>
   <section>
     <Header />
-    <main class="">
+    <!-- <main class="mt-[70px] grille"> -->
+    <main class="mt-[70px] lg:mt-[120px]">
       <RouterView v-slot="{ Component }">
         <Suspense>
           <component :is="Component" :key="$route.path" />

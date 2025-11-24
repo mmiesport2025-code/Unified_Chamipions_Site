@@ -30,9 +30,72 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/about': RouteRecordInfo<
-      '/about',
-      '/about',
+    '/Apropos': RouteRecordInfo<
+      '/Apropos',
+      '/Apropos',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/Calendrier': RouteRecordInfo<
+      '/Calendrier',
+      '/Calendrier',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/Candidature': RouteRecordInfo<
+      '/Candidature',
+      '/Candidature',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/Contact': RouteRecordInfo<
+      '/Contact',
+      '/Contact',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/Equipes/[id]': RouteRecordInfo<
+      '/Equipes/[id]',
+      '/Equipes/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '/Joueurs/[id]': RouteRecordInfo<
+      '/Joueurs/[id]',
+      '/Joueurs/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      | never
+    >,
+    '/ListeEquipe': RouteRecordInfo<
+      '/ListeEquipe',
+      '/ListeEquipe',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/MentionsLegales': RouteRecordInfo<
+      '/MentionsLegales',
+      '/MentionsLegales',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/PolitiqueConfidentialite': RouteRecordInfo<
+      '/PolitiqueConfidentialite',
+      '/PolitiqueConfidentialite',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/Stream': RouteRecordInfo<
+      '/Stream',
+      '/Stream',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -56,9 +119,63 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/about.vue': {
+    'src/pages/Apropos.vue': {
       routes:
-        | '/about'
+        | '/Apropos'
+      views:
+        | never
+    }
+    'src/pages/Calendrier.vue': {
+      routes:
+        | '/Calendrier'
+      views:
+        | never
+    }
+    'src/pages/Candidature.vue': {
+      routes:
+        | '/Candidature'
+      views:
+        | never
+    }
+    'src/pages/Contact.vue': {
+      routes:
+        | '/Contact'
+      views:
+        | never
+    }
+    'src/pages/Equipes/[id].vue': {
+      routes:
+        | '/Equipes/[id]'
+      views:
+        | never
+    }
+    'src/pages/Joueurs/[id].vue': {
+      routes:
+        | '/Joueurs/[id]'
+      views:
+        | never
+    }
+    'src/pages/ListeEquipe.vue': {
+      routes:
+        | '/ListeEquipe'
+      views:
+        | never
+    }
+    'src/pages/MentionsLegales.vue': {
+      routes:
+        | '/MentionsLegales'
+      views:
+        | never
+    }
+    'src/pages/PolitiqueConfidentialite.vue': {
+      routes:
+        | '/PolitiqueConfidentialite'
+      views:
+        | never
+    }
+    'src/pages/Stream.vue': {
+      routes:
+        | '/Stream'
       views:
         | never
     }

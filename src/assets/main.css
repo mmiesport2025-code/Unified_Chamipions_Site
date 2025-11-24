@@ -8,3 +8,57 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@layer components {
+  .grille {
+    @apply grid lg:grid-cols-principal grid-cols-telprincipal justify-center gap-x-2.5 lg:gap-x-5 lg:px-12;
+  }
+
+  .col1 {
+    @apply grid lg:grid-cols-pc1 grid-cols-tel1 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col2 {
+    @apply grid lg:grid-cols-pc2 grid-cols-tel2  justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col3 {
+    @apply grid lg:grid-cols-pc3 grid-cols-tel3 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col4 {
+    @apply grid lg:grid-cols-pc4 grid-cols-tel4 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col5 {
+    @apply grid lg:grid-cols-pc5 grid-cols-tel5 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col6 {
+    @apply grid lg:grid-cols-pc6 grid-cols-tel6 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col7 {
+    @apply grid lg:grid-cols-pc7 grid-cols-tel7 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col8 {
+    @apply grid lg:grid-cols-pc8 grid-cols-tel8 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col9 {
+    @apply grid lg:grid-cols-pc9 grid-cols-tel9 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col10 {
+    @apply grid lg:grid-cols-pc10 grid-cols-tel10 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col11 {
+    @apply grid lg:grid-cols-pc11 grid-cols-tel11 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+
+  .col12 {
+    @apply grid lg:grid-cols-pc12 grid-cols-tel12 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
+  }
+}
