@@ -8,23 +8,41 @@ import FooterCosmetic from './image/FooterCosmetic.vue'
     <nav class="flex justify-between font-Inter p-5 lg:px-80 lg:py-20 bg-Noir">
       <ul>
         <li><h2 class="text-sm lg:text-3xl uppercase font-bold mb-2.5">Nos équipes</h2></li>
-        <li><a href="" class="text-xs lg:text-xl">Valorant</a></li>
-        <li><a href="" class="text-xs lg:text-xl">League of Legends</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Mario Kart 8 Deluxe</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Rocket League</a></li>
+        <li><RouterLink to="/equipes/valorant" class="text-xs lg:text-xl">Valorant</RouterLink></li>
+        <li>
+          <RouterLink to="/equipes/league-of-legends" class="text-xs lg:text-xl"
+            >League of Legends</RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink to="/equipes/mario-kart-8-deluxe" class="text-xs lg:text-xl"
+            >Mario Kart 8 Deluxe</RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink to="/equipes/rocket-league" class="text-xs lg:text-xl"
+            >Rocket League</RouterLink
+          >
+        </li>
       </ul>
       <ul>
         <li><h2 class="text-sm lg:text-3xl uppercase font-bold mb-2.5">Liens utiles</h2></li>
-        <li><a href="" class="text-xs lg:text-xl">Calendrier</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Qui sommes-nous ?</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Histoire du club</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Mentions légales</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Politique de confidentialité</a></li>
+        <li><RouterLink to="/calendrier" class="text-xs lg:text-xl">Calendrier</RouterLink></li>
+        <li><RouterLink to="/Apropos" class="text-xs lg:text-xl">Qui sommes-nous ?</RouterLink></li>
+        <li><RouterLink to="/Apropos" class="text-xs lg:text-xl">Histoire du club</RouterLink></li>
+        <li>
+          <RouterLink to="/MentionsLegales" class="text-xs lg:text-xl">Mentions légales</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/PolitiqueConfidentialite" class="text-xs lg:text-xl"
+            >Politique de confidentialité</RouterLink
+          >
+        </li>
       </ul>
       <ul>
         <li><h2 class="text-sm lg:text-3xl uppercase font-bold mb-2.5">Contacts et réseaux</h2></li>
-        <li><a href="" class="text-xs lg:text-xl">Candidature</a></li>
-        <li><a href="" class="text-xs lg:text-xl">Contact</a></li>
+        <li><RouterLink to="/candidature" class="text-xs lg:text-xl">Candidature</RouterLink></li>
+        <li><RouterLink to="/contact" class="text-xs lg:text-xl">Contact</RouterLink></li>
         <li>
           <div>
             <a href=""><img /></a>
