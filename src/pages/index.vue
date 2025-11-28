@@ -9,7 +9,9 @@
         unique aux étudiants passionnés par les jeux vidéo compétitifs de se rassembler, de se
         former, et de s'entrainer ensemble.
       </p>
-      <button>REJOINDRE DISCORD</button>
+      <a href="https://discord.gg/MYB83Jenkq" target="_blank" rel="noopener noreferrer">
+        <button>REJOINDRE DISCORD</button>
+      </a>
     </section>
     <img src="" alt="Logo" />
   </header>
@@ -21,6 +23,24 @@
       cohésion, chaque roster incarne l’esprit d’équipe et la volonté de progresser ensemble.
     </p>
     <!--Carrousel-->
+    <div class="flex">
+      <div>
+        <p>4</p>
+        <p>Jeux compétitifs</p>
+      </div>
+      <div>
+        <p>7</p>
+        <p>Bénévols</p>
+      </div>
+      <div>
+        <p>12</p>
+        <p>Tournois disputés</p>
+      </div>
+      <div>
+        <p>2</p>
+        <p>Équipes féminines</p>
+      </div>
+    </div>
   </section>
   <section>
     <h2 class="uppercase">Qui <span>Sommes</span> nous ?</h2>
