@@ -48,3 +48,13 @@ export async function EquipesByID(ID: string) {
   const record = await pb.collection('Equipes').getOne<EquipesResponse>(ID)
   return record
 }
+
+export async function AllJoueurs() {
+  const records = await pb.collection('Joueurs').getFullList()
+  return records
+}
+
+export async function JoueursByID(ID: string) {
+  const record = await pb.collection('Joueurs').getOne<JoueursResponse>(ID)
+  return record
+}

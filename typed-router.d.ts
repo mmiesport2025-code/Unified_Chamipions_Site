@@ -72,6 +72,13 @@ declare module 'vue-router/auto-routes' {
       { id: ParamValue<false> },
       | never
     >,
+    '/Joueurs/': RouteRecordInfo<
+      '/Joueurs/',
+      '/Joueurs',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/Joueurs/[id]': RouteRecordInfo<
       '/Joueurs/[id]',
       '/Joueurs/:id',
@@ -152,6 +159,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/Equipes/[id].vue': {
       routes:
         | '/Equipes/[id]'
+      views:
+        | never
+    }
+    'src/pages/Joueurs/index.vue': {
+      routes:
+        | '/Joueurs/'
       views:
         | never
     }
