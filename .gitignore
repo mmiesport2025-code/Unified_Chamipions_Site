@@ -14,6 +14,9 @@ dist-ssr
 coverage
 *.local
 
+/cypress/videos/
+/cypress/screenshots/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -25,12 +28,11 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+typed-router.d.ts
 
-.eslintcache
+# PocketBase
+/pocketbase/*
+!/pocketbase/pb_migrations
 
-# Cypress
-/cypress/videos/
-/cypress/screenshots/
-
-# Vitest
-__screenshots__/
+#.env.production
+.env.production
