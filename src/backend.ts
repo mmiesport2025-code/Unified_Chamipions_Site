@@ -1,6 +1,10 @@
 import PocketBase from 'pocketbase'
 
-import { type EquipesResponse, type TypedPocketBase } from './pocketbase-types.js'
+import {
+  type EquipesResponse,
+  type JoueursResponse,
+  type TypedPocketBase,
+} from './pocketbase-types.js'
 
 export const pb = new PocketBase(import.meta.env.VITE_URL_POCKETBASE) as TypedPocketBase
 
