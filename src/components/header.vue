@@ -25,7 +25,7 @@ import { RouterLink } from 'vue-router'
     </button>
     <nav class="hidden md:block">
       <ul class="flex gap-5 xl:gap-12 text-sm xl:text-xl font-Inter font-extrabold uppercase">
-        <li><RouterLink to="/Equipes/test">équipes</RouterLink></li>
+        <li><RouterLink to="/Equipes">équipes</RouterLink></li>
         <li><RouterLink to="/Apropos">à propos</RouterLink></li>
         <li><RouterLink to="/calendrier">calendrier</RouterLink></li>
         <li><RouterLink to="/stream">stream</RouterLink></li>

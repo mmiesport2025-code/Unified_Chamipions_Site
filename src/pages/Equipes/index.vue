@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { AllTeam, TeamBySpecificityAndGame } from '@/backend'
+import { RouterLink } from 'vue-router'
 const listeEquipe = await AllTeam()
 const FilterSpe = ref('')
 const FilterGame = ref('')
@@ -48,7 +49,9 @@ watch(
       <p>{{ listeEquipe }}</p>
       <div v-for="equipe in listeEquipe" :key="equipe.id" v-bind="equipe">
         <h4>{{ equipe.nom }}</h4>
-        <button>Voir plus</button>
+        <router-link :to="`/Equipes/${equipe.id}`">
+          <button>Voir plus</button>
+        </router-link>
       </div>
       <p>{{ listeEquipeFilter }}</p>
     </article>
