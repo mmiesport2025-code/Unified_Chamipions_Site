@@ -43,3 +43,8 @@ export async function AllTeam() {
   const records = await pb.collection('Equipes').getFullList()
   return records
 }
+
+export async function EquipesByID(ID: string) {
+  const record = await pb.collection('Equipes').getOne<EquipesResponse>(ID)
+  return record
+}
