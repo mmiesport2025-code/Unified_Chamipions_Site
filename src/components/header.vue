@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router'
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header
-    class="bg-NoirPur text-Blanc w-full h-[70px] xl:h-[120px] flex items-center justify-between px-5 xl:px-24 absolute"
+    class="bg-NoirPur text-Blanc w-full h-[70px] xl:h-[120px] flex items-center justify-between px-5 xl:px-24 fixed"
   >
     <RouterLink to="/" class="flex items-center gap-4">
       <img class="h-[50px] xl:h-[90px]" src="./image/LogoUnifiedChampions.png" alt="Logo" />

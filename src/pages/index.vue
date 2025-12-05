@@ -1,6 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script setup lang="ts">
+import HomePageDecoration from '@/components/assets/decoration/HomePageDecoration.vue'
+</script>
 <template>
-  <header>
+  <header class="bg-NoirPur text-Blanc h-screen pt-[70px] lg:pt-[120px] block">
+    <video autoplay muted playsinline class="video">
+      <source src="../components/video/Double_explosion_v2.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
     <section>
       <h1 class="uppercase">Unite to win</h1>
       <h2 class="uppercase">Le bénévolat dans le monde de l'esport</h2>
@@ -13,7 +20,7 @@
         <button>REJOINDRE DISCORD</button>
       </a>
     </section>
-    <img src="" alt="Logo" />
+    <HomePageDecoration class="w-full absolute bottom-0" />
   </header>
   <section>
     <h2 class="uppercase">Les <span>Equipes</span></h2>
