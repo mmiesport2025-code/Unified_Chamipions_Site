@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Agrandir';
-  src: url('@/assets/fonts/Agrandir-WideBlackItalic.otf') format('opentype');
+  src: url('../components/assets/fonts/Agrandir-WideBlackItalic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -61,4 +61,8 @@
   .col12 {
     @apply grid lg:grid-cols-pc12 grid-cols-tel12 justify-center gap-x-2.5 lg:gap-x-5 lg:px-0;
   }
+}
+
+:root {
+  --linear-purple-gradient: linear-gradient(90deg, #a900c6 0%, #e6a0ff 100%);
 }

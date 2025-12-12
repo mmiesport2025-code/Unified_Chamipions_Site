@@ -4,21 +4,57 @@ import HomePageDecoration from '@/components/assets/decoration/HomePageDecoratio
 </script>
 <template>
   <header class="bg-NoirPur text-Blanc h-screen pt-[70px] lg:pt-[120px] block">
-    <video autoplay muted playsinline class="video">
-      <source src="../components/video/Double_explosion_v2.mp4" type="video/mp4" />
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="video min-w-full h-screen w-auto flex justify-center items-center object-cover absolute top-0 left-0"
+    >
+      <source
+        src="../components/video/Double_explosion_v2.mp4"
+        type="video/mp4"
+        class="min-w-full h-screen"
+      />
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
-    <section>
-      <h1 class="uppercase">Unite to win</h1>
-      <h2 class="uppercase">Le bénévolat dans le monde de l'esport</h2>
-      <p>
-        Unified Champions est une association universitaire d'Esport qui offre une opportunité
-        unique aux étudiants passionnés par les jeux vidéo compétitifs de se rassembler, de se
-        former, et de s'entrainer ensemble.
-      </p>
-      <a href="https://discord.gg/MYB83Jenkq" target="_blank" rel="noopener noreferrer">
-        <button>REJOINDRE DISCORD</button>
-      </a>
+    <section
+      class="z-10 relative flex w-full h-full lg:gap-32 xl:gap-64 px-5 md:px-32 xl:px-52 items-center lg:justify-center"
+    >
+      <div class="flex lg:blocl flex-col text-center">
+        <h1
+          class="uppercase font-Agrandir text-4xl lg:text-6xl bg-gradient-to-r from-[#a900c6] to-[#e6a0ff] bg-clip-text text-[#00000000] lg:text-nowrap"
+        >
+          Unite to win
+        </h1>
+        <h2
+          class="uppercase font-Sarabun font-bold text-base lg:text-2xl tracking-wide lg:text-nowrap"
+        >
+          Le bénévolat dans le monde de l'esport
+        </h2>
+        <p class="lg:max-w-[60vw] text-xs lg:text-xl mt-4 tracking-wide">
+          Unified Champions est une association universitaire d'Esport qui offre une opportunité
+          unique aux étudiants passionnés par les jeux vidéo compétitifs de se rassembler, de se
+          former, et de s'entrainer ensemble.
+        </p>
+        <div class="w-full flex justify-center mt-16">
+          <a
+            href="https://discord.gg/MYB83Jenkq"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 lg:px-32 h-8 lg:h-auto lg:py-5 border-2 lg:border-4 border-[#ffffff]"
+          >
+            <button class="font-bold text-xs lg:text-base">REJOINDRE DISCORD</button>
+          </a>
+        </div>
+      </div>
+      <div class="hidden lg:block">
+        <img
+          src="../components/image/UnifiedLogoHD.png"
+          alt="logo Unified Champions"
+          class="w-auto min-w-48"
+        />
+      </div>
     </section>
     <HomePageDecoration class="w-full absolute bottom-0" />
   </header>

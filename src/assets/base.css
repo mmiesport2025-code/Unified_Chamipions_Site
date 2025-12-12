@@ -19,6 +19,8 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --linear-purple-gradient: linear-gradient(90deg, #a900c6 0%, #e6a0ff 100%);
 }
 
 /* semantic color variables for this project */
