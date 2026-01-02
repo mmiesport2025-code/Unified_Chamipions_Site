@@ -1,9 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import HomePageDecoration from '@/components/assets/decoration/HomePageDecoration.vue'
+import ButtonWithArrow from '@/components/ButtonWithArrow.vue'
 </script>
 <template>
-  <header class="bg-NoirPur text-Blanc h-screen pt-[70px] lg:pt-[120px] block">
+  <header class="bg-NoirPur text-Blanc h-screen pt-[70px] lg:pt-[120px] block border-Blanc">
     <video
       autoplay
       loop
@@ -56,37 +57,23 @@ import HomePageDecoration from '@/components/assets/decoration/HomePageDecoratio
         />
       </div>
     </section>
-    <HomePageDecoration class="w-full absolute bottom-0" />
+    <HomePageDecoration class="w-full absolute bottom-[-1px]" />
   </header>
-  <section>
-    <h2 class="uppercase">Les <span>Equipes</span></h2>
-    <p>
+  <section class="text-center mt-24 mx-10">
+    <h2 class="uppercase font-Agrandir text-5xl mb-6">
+      Les <span class="text-[#AE47F2]">Equipes</span>
+    </h2>
+    <p class="w-[60%] mx-auto text-lg">
       Nos équipes rassemblent des étudiants passionnés qui défendent fièrement les couleurs de
       l’université sur différents jeux. Entre entraînements, compétitions nationales et moments de
       cohésion, chaque roster incarne l’esprit d’équipe et la volonté de progresser ensemble.
     </p>
     <!--Carrousel-->
-    <div class="flex">
-      <div>
-        <p>4</p>
-        <p>Jeux compétitifs</p>
-      </div>
-      <div>
-        <p>7</p>
-        <p>Bénévols</p>
-      </div>
-      <div>
-        <p>12</p>
-        <p>Tournois disputés</p>
-      </div>
-      <div>
-        <p>2</p>
-        <p>Équipes féminines</p>
-      </div>
-    </div>
   </section>
-  <section>
-    <h2 class="uppercase">Qui <span>Sommes</span> nous ?</h2>
+  <section class="mt-24 mx-10">
+    <h2 class="uppercase font-Agrandir text-5xl mb-6 text-center">
+      Qui <span class="text-[#AE47F2]">Sommes</span> nous ?
+    </h2>
     <div>
       <div>
         <div></div>
@@ -94,12 +81,12 @@ import HomePageDecoration from '@/components/assets/decoration/HomePageDecoratio
         <div></div>
       </div>
       <div>
-        <p>
+        <p class="text-lg">
           Unified Champions (UC) est le club eSport officiel de l’Université, créé pour faire de
           l’eSport une pratique sportive reconnue au sein du milieu universitaire. Le club
-          s’articule autour de trois axes :
         </p>
-        <ul class="list-disc pl-10">
+        <p class="text-lg">s’articule autour de trois axes :</p>
+        <ul class="list-disc pl-10 text-lg">
           <li>
             Sportif : entraînements, coaching et compétitions locales, nationales et européennes.
           </li>
@@ -108,28 +95,33 @@ import HomePageDecoration from '@/components/assets/decoration/HomePageDecoratio
             Communautaire : rencontres et événements pour étudiants, enseignants et passionnés.
           </li>
         </ul>
-        <p>
+        <p class="text-lg">
           UC vise à former des équipes performantes, soutenir la reconnaissance académique de
           l’eSport et offrir une expérience unique mêlant passion, apprentissage et esprit d’équipe.
         </p>
-        <button>
-          <p>En savoir plus</p>
-          <img src="" alt="" />
-        </button>
+        <ButtonWithArrow text="En savoir plus" link="/Apropos" />
       </div>
     </div>
   </section>
-  <section>
-    <h2 class="uppercase">Dernières <span>Actus</span></h2>
+  <section class="mt-24 mx-10">
+    <h2 class="uppercase font-Agrandir text-5xl mb-6 text-center">
+      Dernières <span class="text-[#AE47F2]">Actus</span>
+    </h2>
   </section>
-  <section>
-    <h2 class="uppercase">Prochains <span>Matchs</span></h2>
+  <section class="mt-24 mx-10">
+    <h2 class="uppercase font-Agrandir text-5xl mb-6 text-center">
+      Prochains <span class="text-[#AE47F2]">Matchs</span>
+    </h2>
   </section>
-  <section>
-    <h2 class="uppercase">Les <span>Bénévoles</span></h2>
+  <section class="mt-24 mx-10">
+    <h2 class="uppercase font-Agrandir text-5xl mb-6 text-center">
+      Les <span class="text-[#AE47F2]">Bénévoles</span>
+    </h2>
   </section>
-  <section>
-    <h2 class="uppercase">Le <span>Recrutement</span></h2>
+  <section class="mt-24 mx-10">
+    <h2 class="uppercase font-Agrandir text-5xl mb-6 text-center">
+      Le <span class="text-[#AE47F2]">Recrutement</span>
+    </h2>
     <div>
       <div>
         <p class="">
@@ -149,7 +141,7 @@ import HomePageDecoration from '@/components/assets/decoration/HomePageDecoratio
           limites, rejoins Unified Champions dès maintenant. Prépare-toi à t’entraîner, à vibrer, à
           gagner. L’arène t’attend
         </p>
-        <button>Nous rejoindre</button>
+        <ButtonWithArrow text="Nous Rejoindre" link="/Candidature" />
       </div>
       <div><img src="" alt="" /></div>
     </div>

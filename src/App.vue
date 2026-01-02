@@ -16,7 +16,7 @@ const Page_actuelle = computed(() => {
 })
 </script>
 <template>
-  <section>
+  <section class="font-Inter">
     <Header />
     <!-- <main class="mt-[70px] grille"> -->
     <main :class="Page_actuelle ? 'mt-[70px] lg:mt-[120px]' : ''">
