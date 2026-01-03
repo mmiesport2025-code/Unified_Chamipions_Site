@@ -11,6 +11,7 @@ export const lolModeType = defineType({
       title: 'Nom du mode',
       type: 'string',
       description: 'Nom du mode de jeu (ex : Ranked, ARAM, URF)',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const lolModeType = defineType({
         hotspot: true,
       },
       description: 'Image représentant le mode de jeu',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

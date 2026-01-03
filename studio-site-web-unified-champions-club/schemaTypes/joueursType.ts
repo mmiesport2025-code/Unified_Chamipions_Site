@@ -10,12 +10,14 @@ export const joueursType = defineType({
       name: 'prenom',
       title: 'Prénom',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
       name: 'nom',
       title: 'Nom',
       type: 'string',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -39,6 +41,7 @@ export const joueursType = defineType({
       options: {
         hotspot: true,
       },
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -52,7 +55,7 @@ export const joueursType = defineType({
           {title: 'Anglais', value: 'Anglais'},
         ],
       },
-      validation: (rule) => rule.max(2),
+      initialValue: ['Français'],
     }),
 
     /* ===============================

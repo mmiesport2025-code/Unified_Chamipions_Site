@@ -20,12 +20,14 @@ export const jeuxType = defineType({
       options: {
         hotspot: true,
       },
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
       name: 'icone',
       title: 'Icône',
       type: 'image',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -35,6 +37,7 @@ export const jeuxType = defineType({
       options: {
         hotspot: true,
       },
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -42,6 +45,7 @@ export const jeuxType = defineType({
       title: 'Description',
       type: 'text',
       rows: 4,
+      validation: (rule) => rule.required(),
     }),
   ],
 

@@ -11,6 +11,7 @@ export const valoAgentType = defineType({
       title: 'Nom de l’agent',
       type: 'string',
       description: 'Nom officiel de l’agent dans Valorant',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const valoAgentType = defineType({
         hotspot: true,
       },
       description: 'Image représentant l’agent',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

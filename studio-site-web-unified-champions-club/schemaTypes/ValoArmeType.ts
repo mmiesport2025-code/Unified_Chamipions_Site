@@ -11,6 +11,7 @@ export const valoArmeType = defineType({
       title: 'Nom de l’arme',
       type: 'string',
       description: 'Nom officiel de l’arme dans Valorant',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const valoArmeType = defineType({
         hotspot: true,
       },
       description: 'Visuel représentant l’arme',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

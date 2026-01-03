@@ -11,6 +11,7 @@ export const lolPositionnementType = defineType({
       title: 'Nom de la position',
       type: 'string',
       description: 'Position ou rôle sur la carte (Top, Jungle, Mid, ADC, Support)',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const lolPositionnementType = defineType({
         hotspot: true,
       },
       description: 'Icône représentant la position',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

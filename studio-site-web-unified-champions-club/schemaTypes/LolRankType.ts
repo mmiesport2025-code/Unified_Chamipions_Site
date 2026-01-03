@@ -12,6 +12,7 @@ export const lolRankType = defineType({
       type: 'string',
       description:
         'Rang classé (Fer, Bronze, Argent, Or, Platine, Diamant, Master, Grandmaster, Challenger)',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -22,6 +23,7 @@ export const lolRankType = defineType({
         hotspot: true,
       },
       description: 'Icône officielle du rang',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

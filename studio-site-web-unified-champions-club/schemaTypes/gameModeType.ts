@@ -11,6 +11,7 @@ export const gameModeType = defineType({
       title: 'Nom réduit',
       type: 'string',
       description: 'Nom court ou abrégé du mode de jeu (ex : BO3, FFA)',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -18,6 +19,7 @@ export const gameModeType = defineType({
       title: 'Nom complet',
       type: 'string',
       description: 'Nom complet du mode de jeu (ex : Best of 3, Free For All)',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

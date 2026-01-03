@@ -11,6 +11,7 @@ export const valoMapType = defineType({
       title: 'Nom de la carte',
       type: 'string',
       description: 'Nom officiel de la carte dans Valorant',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const valoMapType = defineType({
         hotspot: true,
       },
       description: 'Visuel représentant la carte',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

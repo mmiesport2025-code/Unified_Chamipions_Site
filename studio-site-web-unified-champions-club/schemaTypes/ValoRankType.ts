@@ -12,6 +12,7 @@ export const valoRankType = defineType({
       type: 'string',
       description:
         'Nom officiel du rang dans Valorant (ex: Fer, Bronze, Argent, Or, Platine, Diamant, Immortel, Radiant)',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -22,6 +23,7 @@ export const valoRankType = defineType({
         hotspot: true,
       },
       description: 'Icône représentant le rang',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

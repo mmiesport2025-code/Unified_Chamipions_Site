@@ -11,6 +11,7 @@ export const lolItemType = defineType({
       title: 'Nom de l’objet',
       type: 'string',
       description: 'Nom de l’objet dans League of Legends',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const lolItemType = defineType({
         hotspot: true,
       },
       description: 'Image ou icône représentant l’objet',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

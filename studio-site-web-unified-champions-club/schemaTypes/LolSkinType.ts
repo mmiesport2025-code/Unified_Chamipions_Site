@@ -11,6 +11,7 @@ export const lolSkinType = defineType({
       title: 'Nom du skin',
       type: 'string',
       description: 'Nom officiel du skin du champion',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const lolSkinType = defineType({
         hotspot: true,
       },
       description: 'Visuel ou icône du skin',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

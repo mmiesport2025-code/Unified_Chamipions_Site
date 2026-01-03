@@ -11,6 +11,7 @@ export const reseauxType = defineType({
       title: 'Nom',
       type: 'string',
       description: 'Nom du compte ou profil sur le réseau social',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -28,6 +29,7 @@ export const reseauxType = defineType({
         layout: 'dropdown',
       },
       description: 'Type de réseau social',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

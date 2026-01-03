@@ -11,6 +11,7 @@ export const valoSkinType = defineType({
       title: 'Nom du skin',
       type: 'string',
       description: 'Nom officiel du skin pour l’arme ou agent dans Valorant',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const valoSkinType = defineType({
         hotspot: true,
       },
       description: 'Visuel représentant le skin',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

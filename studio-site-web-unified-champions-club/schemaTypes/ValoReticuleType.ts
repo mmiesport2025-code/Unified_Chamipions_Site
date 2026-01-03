@@ -11,6 +11,7 @@ export const valoReticuleType = defineType({
       title: 'Nom du réticule',
       type: 'string',
       description: 'Nom ou style du réticule utilisé dans Valorant',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const valoReticuleType = defineType({
         hotspot: true,
       },
       description: 'Visuel représentant le réticule',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

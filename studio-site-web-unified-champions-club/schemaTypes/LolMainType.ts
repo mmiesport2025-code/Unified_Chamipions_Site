@@ -11,6 +11,7 @@ export const lolMainType = defineType({
       title: 'Nom du main',
       type: 'string',
       description: 'Nom du champion ou du rôle principal joué',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -21,6 +22,7 @@ export const lolMainType = defineType({
         hotspot: true,
       },
       description: 'Image représentant le main (champion LoL)',
+      validation: (rule) => rule.required(),
     }),
   ],
 })

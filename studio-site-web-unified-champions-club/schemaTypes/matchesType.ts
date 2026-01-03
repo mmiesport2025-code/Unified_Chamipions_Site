@@ -11,6 +11,7 @@ export const matchType = defineType({
       title: 'Nom du match',
       type: 'string',
       description: 'Nom ou titre du match',
+      initialValue: 'Match',
     }),
 
     defineField({
@@ -18,6 +19,7 @@ export const matchType = defineType({
       title: 'Date de début',
       type: 'datetime',
       description: 'Date et heure de début du match',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -40,6 +42,7 @@ export const matchType = defineType({
       title: 'URL live',
       type: 'url',
       description: 'Lien vers la diffusion en direct (si applicable)',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -63,6 +66,8 @@ export const matchType = defineType({
       type: 'array',
       of: [{type: 'reference', to: [{type: 'equipe'}]}],
       description: 'Équipes participant au match',
+      validation: (rule) => rule.required(),
+      initialValue: ['unknown', 'unknown'],
     }),
 
     defineField({
@@ -71,6 +76,7 @@ export const matchType = defineType({
       type: 'reference',
       to: [{type: 'jeu'}],
       description: 'Jeu concerné par le match',
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
