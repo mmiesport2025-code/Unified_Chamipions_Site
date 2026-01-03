@@ -77,112 +77,113 @@ export const joueursType = defineType({
         },
       ],
     }),
-    // /* ===============================
-    //    Réseaux
-    // =============================== */
 
-    // defineField({
-    //   name: 'reseaux',
-    //   title: 'Réseaux sociaux',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: [{type: 'reseau'}],
-    //     },
-    //   ],
-    // }),
+    /* ===============================
+       Réseaux
+    =============================== */
 
-    // /* ===============================
-    //    VALORANT
-    // =============================== */
+    defineField({
+      name: 'reseaux',
+      title: 'Réseaux sociaux',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'reseau'}],
+        },
+      ],
+    }),
 
-    // defineField({
-    //   name: 'valo_agents',
-    //   title: 'Agents Valorant',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'valo_agent'}]}],
-    // }),
+    /* ===============================
+       VALORANT
+    =============================== */
 
-    // defineField({
-    //   name: 'valo_map',
-    //   title: 'Carte Valorant',
-    //   type: 'reference',
-    //   to: [{type: 'valo_map'}],
-    // }),
+    defineField({
+      name: 'valo_agents',
+      title: 'Agents Valorant',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'valo_agent'}]}],
+    }),
 
-    // defineField({
-    //   name: 'valo_arme',
-    //   title: 'Armes Valorant',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'valo_arme'}]}],
-    // }),
+    defineField({
+      name: 'valo_map',
+      title: 'Carte Valorant',
+      type: 'reference',
+      to: [{type: 'valo_map'}],
+    }),
 
-    // defineField({
-    //   name: 'valo_skin',
-    //   title: 'Skins Valorant',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'valo_skin'}]}],
-    // }),
+    defineField({
+      name: 'valo_arme',
+      title: 'Armes Valorant',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'valo_arme'}]}],
+    }),
 
-    // defineField({
-    //   name: 'valo_rank',
-    //   title: 'Rank Valorant',
-    //   type: 'reference',
-    //   to: [{type: 'valo_rank'}],
-    // }),
+    defineField({
+      name: 'valo_skin',
+      title: 'Skins Valorant',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'valo_skin'}]}],
+    }),
 
-    // defineField({
-    //   name: 'valo_reticule',
-    //   title: 'Réticule Valorant',
-    //   type: 'reference',
-    //   to: [{type: 'valo_reticule'}],
-    // }),
+    defineField({
+      name: 'valo_rank',
+      title: 'Rank Valorant',
+      type: 'reference',
+      to: [{type: 'valo_rank'}],
+    }),
 
-    // /* ===============================
-    //    LEAGUE OF LEGENDS
-    // =============================== */
+    defineField({
+      name: 'valo_reticule',
+      title: 'Réticule Valorant',
+      type: 'reference',
+      to: [{type: 'valo_reticule'}],
+    }),
 
-    // defineField({
-    //   name: 'lol_main',
-    //   title: 'Champions principaux (LoL)',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'lol_main'}]}],
-    // }),
+    /* ===============================
+       LEAGUE OF LEGENDS
+    =============================== */
 
-    // defineField({
-    //   name: 'lol_skin',
-    //   title: 'Skins LoL',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'lol_skin'}]}],
-    // }),
+    defineField({
+      name: 'lol_main',
+      title: 'Champions principaux (LoL)',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'lol_main'}]}],
+    }),
 
-    // defineField({
-    //   name: 'lol_positionnement',
-    //   title: 'Positionnement LoL',
-    //   type: 'reference',
-    //   to: [{type: 'lol_positionnement'}],
-    // }),
+    defineField({
+      name: 'lol_skin',
+      title: 'Skins LoL',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'lol_skin'}]}],
+    }),
 
-    // defineField({
-    //   name: 'lol_rank',
-    //   title: 'Rank LoL',
-    //   type: 'reference',
-    //   to: [{type: 'lol_rank'}],
-    // }),
+    defineField({
+      name: 'lol_positionnement',
+      title: 'Positionnement LoL',
+      type: 'reference',
+      to: [{type: 'lol_positionnement'}],
+    }),
 
-    // defineField({
-    //   name: 'lol_mode',
-    //   title: 'Modes LoL',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'lol_mode'}]}],
-    // }),
+    defineField({
+      name: 'lol_rank',
+      title: 'Rank LoL',
+      type: 'reference',
+      to: [{type: 'lol_rank'}],
+    }),
 
-    // defineField({
-    //   name: 'lol_item',
-    //   title: 'Item favori LoL',
-    //   type: 'reference',
-    //   to: [{type: 'lol_item'}],
-    // }),
+    defineField({
+      name: 'lol_mode',
+      title: 'Modes LoL',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'lol_mode'}]}],
+    }),
+
+    defineField({
+      name: 'lol_item',
+      title: 'Item favori LoL',
+      type: 'reference',
+      to: [{type: 'lol_item'}],
+    }),
   ],
 })
