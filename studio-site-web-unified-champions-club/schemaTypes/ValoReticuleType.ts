@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const valoReticuleType = defineType({
   name: 'valoReticule',
-  title: 'Réticule Valorant',
+  title: 'Valorant | Réticule',
   type: 'document',
 
   fields: [

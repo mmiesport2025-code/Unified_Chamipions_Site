@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const valoAgentType = defineType({
   name: 'valoAgent',
-  title: 'Agent Valorant',
+  title: 'Valorant | Agent',
   type: 'document',
 
   fields: [

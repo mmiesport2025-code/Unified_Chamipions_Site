@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const valoRankType = defineType({
   name: 'valoRank',
-  title: 'Rang Valorant',
+  title: 'Valorant | Rang',
   type: 'document',
 
   fields: [

@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const lolSkinType = defineType({
   name: 'lolSkin',
-  title: 'Skin League of Legends',
+  title: 'League of Legends | Skin',
   type: 'document',
 
   fields: [

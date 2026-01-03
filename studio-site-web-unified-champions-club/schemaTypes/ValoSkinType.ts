@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const valoSkinType = defineType({
   name: 'valoSkin',
-  title: 'Skin Valorant',
+  title: 'Valorant |Skin',
   type: 'document',
 
   fields: [

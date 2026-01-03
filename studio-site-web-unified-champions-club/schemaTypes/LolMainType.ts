@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const lolMainType = defineType({
   name: 'lolMain',
-  title: 'Main League of Legends',
+  title: 'League of Legends |Main',
   type: 'document',
 
   fields: [

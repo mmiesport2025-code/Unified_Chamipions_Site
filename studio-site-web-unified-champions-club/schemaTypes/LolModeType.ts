@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const lolModeType = defineType({
   name: 'lolMode',
-  title: 'Mode de jeu League of Legends',
+  title: 'League of Legends |Mode de jeu',
   type: 'document',
 
   fields: [

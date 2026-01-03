@@ -92,7 +92,7 @@ export const joueursType = defineType({
       of: [
         {
           type: 'reference',
-          to: [{type: 'reseau'}],
+          to: [{type: 'reseaux'}],
         },
       ],
     }),
@@ -102,45 +102,45 @@ export const joueursType = defineType({
     =============================== */
 
     defineField({
-      name: 'valo_agents',
+      name: 'valoAgent',
       title: 'Agents Valorant',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'valo_agent'}]}],
+      of: [{type: 'reference', to: [{type: 'valoAgent'}]}],
     }),
 
     defineField({
-      name: 'valo_map',
+      name: 'valoMap',
       title: 'Carte Valorant',
       type: 'reference',
-      to: [{type: 'valo_map'}],
+      to: [{type: 'valoMap'}],
     }),
 
     defineField({
-      name: 'valo_arme',
+      name: 'valoArme',
       title: 'Armes Valorant',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'valo_arme'}]}],
+      of: [{type: 'reference', to: [{type: 'valoArme'}]}],
     }),
 
     defineField({
-      name: 'valo_skin',
+      name: 'valoSkin',
       title: 'Skins Valorant',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'valo_skin'}]}],
+      of: [{type: 'reference', to: [{type: 'valoSkin'}]}],
     }),
 
     defineField({
-      name: 'valo_rank',
+      name: 'valoRank',
       title: 'Rank Valorant',
       type: 'reference',
-      to: [{type: 'valo_rank'}],
+      to: [{type: 'valoRank'}],
     }),
 
     defineField({
-      name: 'valo_reticule',
+      name: 'valoReticule',
       title: 'Réticule Valorant',
       type: 'reference',
-      to: [{type: 'valo_reticule'}],
+      to: [{type: 'valoReticule'}],
     }),
 
     /* ===============================
@@ -148,45 +148,45 @@ export const joueursType = defineType({
     =============================== */
 
     defineField({
-      name: 'lol_main',
+      name: 'lolMain',
       title: 'Champions principaux (LoL)',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'lol_main'}]}],
+      of: [{type: 'reference', to: [{type: 'lolMain'}]}],
     }),
 
     defineField({
-      name: 'lol_skin',
+      name: 'lolSkin',
       title: 'Skins LoL',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'lol_skin'}]}],
+      of: [{type: 'reference', to: [{type: 'lolSkin'}]}],
     }),
 
     defineField({
-      name: 'lol_positionnement',
+      name: 'lolPositionnement',
       title: 'Positionnement LoL',
       type: 'reference',
-      to: [{type: 'lol_positionnement'}],
+      to: [{type: 'lolPositionnement'}],
     }),
 
     defineField({
-      name: 'lol_rank',
+      name: 'lolRank',
       title: 'Rank LoL',
       type: 'reference',
-      to: [{type: 'lol_rank'}],
+      to: [{type: 'lolRank'}],
     }),
 
     defineField({
-      name: 'lol_mode',
+      name: 'lolMode',
       title: 'Modes LoL',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'lol_mode'}]}],
+      of: [{type: 'reference', to: [{type: 'lolMode'}]}],
     }),
 
     defineField({
-      name: 'lol_item',
+      name: 'lolItem',
       title: 'Item favori LoL',
       type: 'reference',
-      to: [{type: 'lol_item'}],
+      to: [{type: 'lolItem'}],
     }),
   ],
 })

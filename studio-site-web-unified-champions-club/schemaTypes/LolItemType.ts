@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const lolItemType = defineType({
   name: 'lolItem',
-  title: 'Objet League of Legends',
+  title: 'League of Legends | Objet',
   type: 'document',
 
   fields: [

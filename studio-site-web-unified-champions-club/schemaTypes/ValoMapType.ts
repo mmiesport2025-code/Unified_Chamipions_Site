@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const valoMapType = defineType({
   name: 'valoMap',
-  title: 'Carte Valorant',
+  title: 'Valorant | Carte',
   type: 'document',
 
   fields: [
