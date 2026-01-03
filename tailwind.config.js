@@ -16,6 +16,12 @@ export default {
       Sarabun: 'Sarabun',
     },
     extend: {
+      screens: {
+        xs: '24rem', // >= 384px
+        xxl: '88rem', // >= 1408px
+        'h-sm': { raw: '(max-height: 650px)' },
+      },
+
       gridTemplateColumns: {
         principal: 'repeat(12, 1fr)',
         pc12: 'repeat(12, 1fr)',
