@@ -1,27 +1,40 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { ref } from 'vue'
-import { AllTeam, TeamBySpecificityAndGame } from '@/backend'
-import { RouterLink } from 'vue-router'
-const listeEquipe = await AllTeam()
-const FilterSpe = ref('')
-const FilterGame = ref('')
-// const listeEquipeFilter = await TeamBySpecificityAndGame(FilterSpe.value, FilterGame.value)
+import { onMounted, ref } from 'vue'
 
-import { computed, watch } from 'vue'
+import type { FullEquipe } from '@/types/equipe'
 
-const listeEquipeFilter = ref<Equipe[]>([])
+const equipes = ref<FullEquipe[]>([])
 
-const filters = computed(() => ({ spe: FilterSpe.value, game: FilterGame.value }))
+onMounted(async () => {
+  const dataset = 'production'
+  const query = encodeURIComponent(`
+    *[_type == "equipe"]{
+      _id,
+      nom,
+      joueurs[]->{
+        _id,
+        prenom,
+        nom,
+        pseudo
+      },
+      jeu->{
+        _id,
+        nom
+      }
+    }
+  `)
 
-watch(
-  filters,
-  async (f) => {
-    const res = await TeamBySpecificityAndGame(f.spe || '', f.game || '')
-    listeEquipeFilter.value = (res ?? []) as Equipe[]
-  },
-  { immediate: true, deep: true },
-)
+  const url = `https://s8s4tdl3.api.sanity.io/v2026-01-02/data/query/${dataset}?query=${query}`
+
+  try {
+    const res = await fetch(url)
+    const data = await res.json()
+    equipes.value = data.result
+  } catch (err) {
+    console.error(err)
+  }
+})
 </script>
 <template>
   <header>
@@ -30,11 +43,7 @@ watch(
   </header>
   <section>
     <h2>Les <span>catégories</span></h2>
-    <div>
-      <button @click="FilterSpe = 'Masculine'">Équipes masculines</button>
-      <button @click="FilterSpe = 'Feminine'">Équipes féminines</button>
-      <button @click="FilterSpe = 'Mixte'">Équipes mixtes</button>
-    </div>
+
     <div>
       <button><img /></button>
       <button><img /></button>
@@ -45,15 +54,18 @@ watch(
   <section>
     <h2>Les <span>équipes</span></h2>
     <article>
-      <h3>Valorant</h3>
-      <p>{{ listeEquipe }}</p>
-      <div v-for="equipe in listeEquipe" :key="equipe.id" v-bind="equipe">
+      <!-- <h3>Valorant</h3> -->
+      <div v-for="equipe in equipes" :key="equipe._id" v-bind="equipe">
         <h4>{{ equipe.nom }}</h4>
-        <router-link :to="`/Equipes/${equipe.id}`">
+        <ul>
+          <li v-for="joueur in equipe.joueurs" :key="joueur._id">
+            {{ joueur.prenom }} {{ joueur.nom }}
+          </li>
+        </ul>
+        <router-link :to="`/Equipes/${equipe._id}`">
           <button>Voir plus</button>
         </router-link>
       </div>
-      <p>{{ listeEquipeFilter }}</p>
     </article>
   </section>
 </template>

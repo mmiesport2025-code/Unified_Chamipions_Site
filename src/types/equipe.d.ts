@@ -1,21 +1,35 @@
-type Equipe = {
-  id: string
+export type Equipe = {
+  _id: string
   nom: string
   appartenance_au_club: boolean
-  specificite: string
+  specificite: 'Masculine' | 'Feminine' | 'Mixte'
+  joueurs: {
+    _ref: string
+    _type: 'reference'
+  }[]
+  jeu: {
+    _ref: string
+    _type: 'reference'
+  }
 }
 
-type FullEquipe = Equipe & {
-  id_joueur: {
-    id: string
+export type FullEquipe = {
+  _id: string
+  nom: string
+  appartenance_au_club: boolean
+  specificite: 'Masculine' | 'Feminine' | 'Mixte'
+
+  joueurs: {
+    _id: string
     pseudo: string
     nom: string
     prenom: string
     portrait: string
     nationalite: string
-  }
-  id_jeu: {
-    id: string
+  }[]
+
+  jeu: {
+    _id: string
     nom: string
     logo: string
     icone: string
