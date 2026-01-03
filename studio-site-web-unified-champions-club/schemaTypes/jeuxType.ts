@@ -41,6 +41,16 @@ export const jeuxType = defineType({
     }),
 
     defineField({
+      name: 'bandeau',
+      title: 'Bandeau',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
