@@ -9,73 +9,112 @@ import FooterCosmetic from './image/FooterCosmetic.vue'
       <ul class="flex flex-col gap-1 lg:gap-2.5">
         <li><h2 class="text-[11px] xl:text-2xl uppercase font-bold mb-2.5">Nos équipes</h2></li>
         <li>
-          <RouterLink to="/equipes/valorant" class="text-[11px] xl:text-lg"
-            ><p>Valorant</p></RouterLink
+          <RouterLink to="/equipes/valorant" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Valorant
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/equipes/league-of-legends" class="text-[11px] xl:text-lg"
-            ><p>League of Legends</p></RouterLink
+          <RouterLink to="/equipes/league-of-legends" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              League of Legends
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/equipes/mario-kart-8-deluxe" class="text-[11px] xl:text-lg"
-            ><p>Mario Kart 8 Deluxe</p></RouterLink
+          <RouterLink to="/equipes/mario-kart-8-deluxe" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Mario Kart 8 Deluxe
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/equipes/rocket-league" class="text-[11px] xl:text-lg"
-            ><p>Rocket League</p></RouterLink
+          <RouterLink to="/equipes/rocket-league" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Rocket League
+            </p></RouterLink
           >
         </li>
       </ul>
       <ul class="flex flex-col gap-1 lg:gap-2.5">
         <li><h2 class="text-[11px] xl:text-2xl uppercase font-bold mb-2.5">Liens utiles</h2></li>
         <li>
-          <RouterLink to="/calendrier" class="text-[11px] xl:text-lg"><p>Calendrier</p></RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/Apropos" class="text-[11px] xl:text-lg"
-            ><p>Qui sommes-nous ?</p></RouterLink
+          <RouterLink to="/calendrier" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Calendrier
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/Apropos" class="text-[11px] xl:text-lg"
-            ><p>Histoire du club</p></RouterLink
+          <RouterLink to="/Apropos" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Qui sommes-nous ?
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/MentionsLegales" class="text-[11px] xl:text-lg"
-            ><p>Mentions légales</p></RouterLink
+          <RouterLink to="/Apropos" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Histoire du club
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/PolitiqueConfidentialite" class="text-[11px] xl:text-lg"
-            ><p>Politique de <br class="block sm:hidden" />confidentialité</p></RouterLink
+          <RouterLink to="/MentionsLegales" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Mentions légales
+            </p></RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink to="/PolitiqueConfidentialite" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Politique de <br class="block sm:hidden" />confidentialité
+            </p></RouterLink
           >
         </li>
       </ul>
       <ul class="flex flex-col gap-1 lg:gap-2.5">
         <li>
-          <h2 class="text-[11px] xl:text-2xl uppercase font-bold mb-2.5">
+          <h2 class="text-[10px] xl:text-2xl uppercase font-bold mb-2.5">
             Contacts et<br />réseaux
           </h2>
         </li>
         <li>
-          <RouterLink to="/candidature" class="text-[11px] xl:text-lg"
-            ><p>Candidature</p></RouterLink
+          <RouterLink to="/candidature" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Candidature
+            </p></RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/contact" class="text-[11px] xl:text-lg"><p>Contact</p></RouterLink>
+          <RouterLink to="/contact" class="text-[10px] xl:text-lg"
+            ><p class="hover:opacity-70 active:opacity-40 transition-opacity">
+              Contact
+            </p></RouterLink
+          >
         </li>
         <li>
-          <div>
-            <a href=""><img /></a>
-            <a href=""><img /></a>
-            <a href=""><img /></a>
-            <a href=""><img /></a>
-            <a href=""><img /></a>
+          <div class="flex gap-2 xl:gap-4 mt-1 xl:mt-5">
+            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+              ><img class="xl:h-7 h-3" src="@/components/image/IconeTwitch.png" alt="icon twitch"
+            /></a>
+            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+              ><img class="xl:h-7 h-3" src="@/components/image/IconeDiscord.png" alt="icon discord"
+            /></a>
+            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+              ><img class="xl:h-7 h-3" src="@/components/image/IconeTwitter.png" alt="icon twitter"
+            /></a>
+            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+              ><img
+                class="xl:h-7 h-3"
+                src="@/components/image/IconeInstagram.png"
+                alt="icon instagram"
+            /></a>
+            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+              ><img class="xl:h-7 h-3" src="@/components/image/IconeTikTok.png" alt="icon tiktok"
+            /></a>
           </div>
         </li>
       </ul>

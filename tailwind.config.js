@@ -9,6 +9,7 @@ export default {
       Noir: '#202024',
       NoirPur: '#0c0b0bff',
       Violet: '#65298c',
+      Violet600: '#8b36c4',
       Violet700: '#ae47f2',
       Rose: '#c61e6a',
     },

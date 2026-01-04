@@ -20,7 +20,7 @@ defineProps<{
     <div class="flex justify-center items-center w-14 md:w-24 h-14 md:h-24">
       <img
         class="max-w-full max-h-full"
-        src="../components/image/ImageTemporaire.png"
+        src="@/components/image/ImageTemporaire.png"
         alt="icone valorant"
       />
     </div>

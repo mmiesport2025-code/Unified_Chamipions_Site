@@ -73,7 +73,7 @@ onMounted(async () => {
             href="https://discord.gg/MYB83Jenkq"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-5 h-sm:px-5 lg:px-32 h-8 h-sm:h-8 lg:h-auto h-sm:py-0 lg:py-5 border-2 lg:border-4 border-[#ffffff] flex items-center justify-center"
+            class="px-5 h-sm:px-5 lg:px-32 h-8 h-sm:h-8 lg:h-auto h-sm:py-0 lg:py-5 border h-sm:border lg:border-2 lg:border-4 border-[#ffffff] flex items-center justify-center hover:bg-[rgba(255,255,255,0.1)] active:bg-[rgba(255,255,255,0.2)] transition-colors"
           >
             <button class="font-bold text-xs h-sm:text-xs lg:text-base">REJOINDRE DISCORD</button>
           </a>
@@ -81,7 +81,7 @@ onMounted(async () => {
       </div>
       <div class="hidden h-sm:hidden lg:block">
         <img
-          src="../components/image/UnifiedLogoHD.png"
+          src="@/components/image/UnifiedLogoHD.png"
           alt="logo Unified Champions"
           class="w-auto min-w-48"
         />
@@ -214,7 +214,7 @@ onMounted(async () => {
         </p>
         <ButtonWithArrow text="Nous Rejoindre" link="/Candidature" />
       </div>
-      <div class="col-span-4 h-40 xs:h-64 md:h-auto">
+      <div class="col-span-4 h-40 xs:h-64 md:h-full md:min-h-full">
         <img
           class="object-cover w-full h-full"
           src="@/components/image/IMG_Tournois4.jpg"
