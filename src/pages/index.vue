@@ -3,6 +3,35 @@
 import HomePageDecoration from '@/components/assets/decoration/HomePageDecoration.vue'
 import ButtonWithArrow from '@/components/ButtonWithArrow.vue'
 import CalendarEventBar from '@/components/Calendar-event-bar.vue'
+import Cardanecdotes from '@/components/Cardanecdotes.vue'
+import { ref, onMounted } from 'vue'
+import type { Message } from '@/types/message'
+const Messages = ref<Message[]>([])
+
+const query = `
+*[_type == "message"]{
+  _id,
+  texte,
+  benevole->{
+    _id,
+    prenom,
+    nom,
+    portrait{
+      asset->{_id, url}
+    }
+  }
+}
+`
+
+onMounted(async () => {
+  const res = await fetch(
+    'https://s8s4tdl3.api.sanity.io/v2026-01-04/data/query/production?query=' +
+      encodeURIComponent(query),
+  )
+
+  const data = await res.json()
+  Messages.value = data.result
+})
 </script>
 <template>
   <header class="bg-NoirPur text-Blanc h-screen pt-[70px] lg:pt-[120px] block border-Blanc">
@@ -156,14 +185,17 @@ import CalendarEventBar from '@/components/Calendar-event-bar.vue'
     <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
       Les <span class="text-[#AE47F2]">Bénévoles</span>
     </h2>
+    <div class="flex flex-col xl:grid xl:grid-cols-2 gap-5">
+      <Cardanecdotes v-for="message in Messages" :key="message._id" :message="message" />
+    </div>
   </section>
-  <section class="mt-12 md:mt-24 mx-5 md:mx-10">
+  <section class="mt-12 md:mt-24 mx-5 md:mx-10 mb-12">
     <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
       Le <span class="text-[#AE47F2]">Recrutement</span>
     </h2>
-    <div>
-      <div>
-        <p class="">
+    <div class="flex flex-col-reverse md:grid md:grid-cols-10 md:flex-row gap-6">
+      <div class="col-span-6">
+        <p class="mt-2 mb-7">
           Rejoins les rangs d’Unified Champions Club et deviens acteur de la compétition
           universitaire ! <br /><br />
           Que tu sois un joueur confirmé ou simplement passionné, UC te donne la chance d’évoluer
@@ -182,7 +214,13 @@ import CalendarEventBar from '@/components/Calendar-event-bar.vue'
         </p>
         <ButtonWithArrow text="Nous Rejoindre" link="/Candidature" />
       </div>
-      <div><img src="" alt="" /></div>
+      <div class="col-span-4 h-40 xs:h-64 md:h-auto">
+        <img
+          class="object-cover w-full h-full"
+          src="@/components/image/IMG_Tournois4.jpg"
+          alt="photo événement"
+        />
+      </div>
     </div>
   </section>
 </template>

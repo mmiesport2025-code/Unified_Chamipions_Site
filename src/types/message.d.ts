@@ -1,18 +1,10 @@
-export type Joueur = {
+export type Message = {
   _id: string
   texte: string
-  jeu_maitrise?: {
-    _id: string
-    nom: string
-    logo?: string
-    icone?: string
-    fond_carde?: string
-    description?: string
-  }
-  Benevole?: {
+  benevole: {
     _id: string
     prenom: string
-    nom: string
+    nom?: string
     portrait?: {
       _type: 'image'
       asset: {

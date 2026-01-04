@@ -9,8 +9,9 @@ export const messageType = defineType({
     defineField({
       name: 'benevole',
       title: 'Bénévole (associé au message)',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'benevole'}]}],
+      type: 'reference',
+      to: [{type: 'benevole'}],
+      validation: (rule) => rule.required(),
     }),
 
     defineField({
