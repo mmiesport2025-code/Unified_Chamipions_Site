@@ -4,6 +4,8 @@ import {jeuxType} from './jeuxType'
 import {matchType} from './matchsType'
 import {reseauxType} from './reseauxType'
 import {gameModeType} from './gameModeType'
+import {benevoleType} from './benevoleType'
+import {messageType} from './messageType'
 
 // Types LoL
 import {lolItemType} from './lolItemType'
@@ -29,6 +31,8 @@ export const schemaTypes = [
   matchType,
   reseauxType,
   gameModeType,
+  benevoleType,
+  messageType,
 
   // LoL
   lolItemType,
