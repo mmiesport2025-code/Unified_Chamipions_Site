@@ -18,13 +18,18 @@ export default {
       Inter: 'Inter',
       Sarabun: 'Sarabun',
     },
+    screens: {
+      xs: '24rem', // >= 384px
+      ssm: '32rem', // >= 512px
+      sm: '40rem', // >= 640px
+      md: '48rem', // >= 768px
+      lg: '64rem', // >= 1024px
+      xl: '80rem', // >= 1280px
+      xxl: '88rem', // >= 1408px
+      '2xl': '96rem', // >= 1536px
+      'h-sm': { raw: '(max-height: 650px)' },
+    },
     extend: {
-      screens: {
-        xs: '24rem', // >= 384px
-        xxl: '88rem', // >= 1408px
-        'h-sm': { raw: '(max-height: 650px)' },
-      },
-
       gridTemplateColumns: {
         principal: 'repeat(12, 1fr)',
         pc12: 'repeat(12, 1fr)',

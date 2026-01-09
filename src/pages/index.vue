@@ -90,7 +90,7 @@ onMounted(async () => {
     <HomePageDecoration class="w-full absolute bottom-[-1px] h-sm:hidden" />
   </header>
   <section class="text-center mt-12 md:mt-24 mx-5 md:mx-10">
-    <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
       Les <span class="text-[#AE47F2]">Equipes</span>
     </h2>
     <p class="md:w-[60%] mx-auto">
@@ -101,7 +101,7 @@ onMounted(async () => {
     <!--Carrousel-->
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
-    <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Qui <span class="text-[#AE47F2]">Sommes</span> nous ?
     </h2>
     <div class="flex flex-col md:flex-row gap-6 block">
@@ -167,12 +167,12 @@ onMounted(async () => {
     </div>
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
-    <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Dernières <span class="text-[#AE47F2]">Actus</span>
     </h2>
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
-    <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Prochains <span class="text-[#AE47F2]">Matchs</span>
     </h2>
     <div class="flex flex-col gap-6">
@@ -182,7 +182,7 @@ onMounted(async () => {
     </div>
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
-    <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Les <span class="text-[#AE47F2]">Bénévoles</span>
     </h2>
     <div class="flex flex-col xl:grid xl:grid-cols-2 gap-5">
@@ -190,7 +190,7 @@ onMounted(async () => {
     </div>
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10 mb-12">
-    <h2 class="uppercase font-Agrandir text-2xl xs:text-3xl lg:text-5xl mb-6 text-center">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Le <span class="text-[#AE47F2]">Recrutement</span>
     </h2>
     <div class="flex flex-col-reverse md:grid md:grid-cols-10 md:flex-row gap-6">

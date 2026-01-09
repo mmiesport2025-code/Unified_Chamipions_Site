@@ -4,8 +4,18 @@ import Header from './components/header.vue'
 import Footer from './components/footer.vue'
 
 import { computed } from 'vue'
+import { watch } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
+
+watch(
+  () => route.path,
+  (path) => {
+    console.log('Route réelle :', path)
+  },
+  { immediate: true },
+)
+
 const Page_actuelle = computed(() => {
   switch (route.path) {
     case '/':
@@ -14,12 +24,14 @@ const Page_actuelle = computed(() => {
       return true
   }
 })
+
+console.log(route)
 </script>
 <template>
   <section class="font-Inter text-sm lg:text-lg">
     <Header />
     <!-- <main class="mt-[70px] grille"> -->
-    <main :class="Page_actuelle ? 'mt-[70px] lg:mt-[120px]' : ''">
+    <main :class="Page_actuelle ? 'mt-[70px] xl:mt-[120px]' : ''">
       <RouterView v-slot="{ Component }">
         <Suspense>
           <component :is="Component" :key="$route.path" />

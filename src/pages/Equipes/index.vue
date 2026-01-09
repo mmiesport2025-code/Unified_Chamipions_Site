@@ -37,22 +37,59 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <header>
-    <h1 class="uppercase">équipe</h1>
-    <p>La liste exaustives des équipes<br />de Unified Champions Club</p>
+  <header
+    class="bg-[url('@/components/image/CoverPageEquipe.png')] bg-cover bg-center h-[55vh] xl:h-[65vh] flex flex-col justify-end xl:justify-center items-start gap-2 sm:gap-4 xl:gap-5 pl-[10%] xl:pl-[15%] pb-12 xl:pb-0"
+  >
+    <!--                                                                        h-[calc(100vh-70px)] xl:h-[calc(100vh-120px)] -->
+    <h1
+      class="uppercase bg-gradient-to-r from-[#a900c6] to-[#e6a0ff] bg-clip-text text-[#00000000] font-Agrandir text-4xl sm:text-6xl xl:text-8xl font-black"
+    >
+      équipe
+    </h1>
+    <p class="text-Blanc text-base sm:text-xl xl:text-2xl font-semibold">
+      La liste exaustives des équipes<br />de Unified Champions Club
+    </p>
   </header>
-  <section>
-    <h2>Les <span>catégories</span></h2>
-
-    <div>
-      <button><img /></button>
-      <button><img /></button>
-      <button><img /></button>
-      <button><img /></button>
+  <section class="text-center mt-12 md:mt-24 mx-5 md:mx-10">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
+      Les <span class="text-[#AE47F2]">catégories</span>
+    </h2>
+    <div class="flex gap-[5px] md:gap-[50px] lg:gap-[75px] justify-center flex-wrap">
+      <button
+        class="min-w-[120px] md:min-w-0 max-w-[200px] md:max-w-none flex-1 md:flex-none md:w-auto border border-[#939393] h-7 md:h-12 lg:h-14 md:px-3 lg:px-3.5 text-[10px] ssm:text-sm md:text-lg lg:text-2xl"
+      >
+        Équipes masculines
+      </button>
+      <button
+        class="min-w-[120px] md:min-w-0 max-w-[200px] md:max-w-none flex-1 md:flex-none md:w-auto border border-[#939393] h-7 md:h-12 lg:h-14 md:px-3 lg:px-3.5 text-[10px] ssm:text-sm md:text-lg lg:text-2xl"
+      >
+        Équipes mixtes
+      </button>
+      <button
+        class="min-w-[120px] md:min-w-0 max-w-[200px] md:max-w-none flex-1 md:flex-none md:w-auto border border-[#939393] h-7 md:h-12 lg:h-14 md:px-3 lg:px-3.5 text-[10px] ssm:text-sm md:text-lg lg:text-2xl"
+      >
+        Équipes féminines
+      </button>
+    </div>
+    <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center mt-12">
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonValorant.png')] bg-cover bg-center"
+      ></button>
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonLeagueOfLegends.png')] bg-cover bg-center"
+      ></button>
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonMarioKart8.png')] bg-cover bg-center"
+      ></button>
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonRocketLeague.png')] bg-cover bg-center"
+      ></button>
     </div>
   </section>
-  <section>
-    <h2>Les <span>équipes</span></h2>
+  <section class="text-center mt-12 md:mt-24 mx-5 md:mx-10">
+    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
+      Les <span class="text-[#AE47F2]">équipes</span>
+    </h2>
     <article>
       <!-- <h3>Valorant</h3> -->
       <div v-for="equipe in equipes" :key="equipe._id" v-bind="equipe">
