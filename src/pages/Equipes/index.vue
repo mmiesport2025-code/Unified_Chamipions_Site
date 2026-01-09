@@ -1,29 +1,41 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 
 import type { FullEquipe } from '@/types/equipe'
+import { useSanityImage } from '@/composables/sanityImage'
+
+const { urlFor } = useSanityImage()
 
 const equipes = ref<FullEquipe[]>([])
+
+const specificiteFiltre = ref<'Masculine' | 'Feminine' | 'Mixte' | null>(null)
+const jeuFiltre = ref<string | null>(null)
 
 onMounted(async () => {
   const dataset = 'production'
   const query = encodeURIComponent(`
-    *[_type == "equipe"]{
+  *[_type == "equipe"]{
+    _id,
+    nom,
+    appartenance_au_club,
+    specificite,
+    joueurs[]->{
+      _id,
+      pseudo,
+      nom,
+      prenom,
+      portrait
+    },
+    jeu->{
       _id,
       nom,
-      joueurs[]->{
-        _id,
-        prenom,
-        nom,
-        pseudo
-      },
-      jeu->{
-        _id,
-        nom
-      }
+      logo,
+      icone,
+      fond_card   // <-- corrigé ici
     }
-  `)
+  }
+`)
 
   const url = `https://s8s4tdl3.api.sanity.io/v2026-01-02/data/query/${dataset}?query=${query}`
 
@@ -34,6 +46,32 @@ onMounted(async () => {
   } catch (err) {
     console.error(err)
   }
+})
+
+const equipesFiltrees = computed(() => {
+  return equipes.value.filter((equipe) => {
+    const matchSpecificite =
+      !specificiteFiltre.value || equipe.specificite === specificiteFiltre.value
+
+    const matchJeu = !jeuFiltre.value || equipe.jeu.nom === jeuFiltre.value
+
+    return matchSpecificite && matchJeu
+  })
+})
+
+// 2️⃣ On regroupe ensuite par jeu
+const equipesParJeu = computed(() => {
+  const map = new Map<string, { jeu: FullEquipe['jeu']; equipes: FullEquipe[] }>()
+
+  equipesFiltrees.value.forEach((equipe) => {
+    const jeuId = equipe.jeu._id
+    if (!map.has(jeuId)) {
+      map.set(jeuId, { jeu: equipe.jeu, equipes: [] })
+    }
+    map.get(jeuId)!.equipes.push(equipe)
+  })
+
+  return Array.from(map.values())
 })
 </script>
 <template>
@@ -57,16 +95,19 @@ onMounted(async () => {
     <div class="flex gap-[5px] md:gap-[50px] lg:gap-[75px] justify-center flex-wrap">
       <button
         class="min-w-[120px] md:min-w-0 max-w-[200px] md:max-w-none flex-1 md:flex-none md:w-auto border border-[#939393] h-7 md:h-12 lg:h-14 md:px-3 lg:px-3.5 text-[10px] ssm:text-sm md:text-lg lg:text-2xl"
+        @click="specificiteFiltre = specificiteFiltre === 'Masculine' ? null : 'Masculine'"
       >
         Équipes masculines
       </button>
       <button
         class="min-w-[120px] md:min-w-0 max-w-[200px] md:max-w-none flex-1 md:flex-none md:w-auto border border-[#939393] h-7 md:h-12 lg:h-14 md:px-3 lg:px-3.5 text-[10px] ssm:text-sm md:text-lg lg:text-2xl"
+        @click="specificiteFiltre = specificiteFiltre === 'Mixte' ? null : 'Mixte'"
       >
         Équipes mixtes
       </button>
       <button
         class="min-w-[120px] md:min-w-0 max-w-[200px] md:max-w-none flex-1 md:flex-none md:w-auto border border-[#939393] h-7 md:h-12 lg:h-14 md:px-3 lg:px-3.5 text-[10px] ssm:text-sm md:text-lg lg:text-2xl"
+        @click="specificiteFiltre = specificiteFiltre === 'Feminine' ? null : 'Feminine'"
       >
         Équipes féminines
       </button>
@@ -74,35 +115,51 @@ onMounted(async () => {
     <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center mt-12">
       <button
         class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonValorant.png')] bg-cover bg-center"
+        @click="jeuFiltre = jeuFiltre === 'Valorant' ? null : 'Valorant'"
       ></button>
       <button
         class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonLeagueOfLegends.png')] bg-cover bg-center"
+        @click="jeuFiltre = jeuFiltre === 'League of legends' ? null : 'League of legends'"
       ></button>
       <button
         class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonMarioKart8.png')] bg-cover bg-center"
+        @click="jeuFiltre = jeuFiltre === 'Mario Kart 8' ? null : 'Mario Kart 8'"
       ></button>
       <button
         class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonRocketLeague.png')] bg-cover bg-center"
+        @click="jeuFiltre = jeuFiltre === 'Rocket League' ? null : 'Rocket League'"
       ></button>
     </div>
   </section>
+  {{ jeuFiltre }}
   <section class="text-center mt-12 md:mt-24 mx-5 md:mx-10">
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
       Les <span class="text-[#AE47F2]">équipes</span>
     </h2>
-    <article>
-      <!-- <h3>Valorant</h3> -->
-      <div v-for="equipe in equipes" :key="equipe._id" v-bind="equipe">
-        <h4>{{ equipe.nom }}</h4>
-        <ul>
-          <li v-for="joueur in equipe.joueurs" :key="joueur._id">
-            {{ joueur.prenom }} {{ joueur.nom }}
-          </li>
-        </ul>
-        <router-link :to="`/Equipes/${equipe._id}`">
-          <button>Voir plus</button>
-        </router-link>
-      </div>
-    </article>
+
+    <div v-for="jeuGroup in equipesParJeu" :key="jeuGroup.jeu._id">
+      <article class="mb-12">
+        <h3 class="text-2xl font-bold mb-4">{{ jeuGroup.jeu.nom }}</h3>
+        <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center">
+          <div v-for="equipe in jeuGroup.equipes" :key="equipe._id" class="border rounded p-4 w-72">
+            <img
+              v-if="equipe.jeu.fond_card"
+              :src="urlFor(equipe.jeu.fond_card)?.width(600).url()"
+              :alt="equipe.nom"
+              class="card__Image mb-2"
+            />
+            <h4 class="font-semibold">{{ equipe.nom }}</h4>
+            <ul class="text-left">
+              <li v-for="joueur in equipe.joueurs" :key="joueur._id">
+                {{ joueur.prenom }} {{ joueur.nom }}
+              </li>
+            </ul>
+            <router-link :to="`/Equipes/${equipe._id}`">
+              <button class="mt-2 border px-3 py-1 rounded">Voir plus</button>
+            </router-link>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 </template>

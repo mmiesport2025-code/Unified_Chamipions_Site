@@ -31,5 +31,17 @@ export const reseauxType = defineType({
       description: 'Type de réseau social',
       validation: (rule) => rule.required(),
     }),
+
+    defineField({
+      name: 'url',
+      title: 'URL du profil',
+      type: 'url',
+      description: 'Lien vers le profil ou la page officielle',
+      validation: (rule) =>
+        rule.required().uri({
+          scheme: ['http', 'https'],
+          allowRelative: false,
+        }),
+    }),
   ],
 })
