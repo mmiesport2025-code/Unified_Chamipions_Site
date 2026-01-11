@@ -16,4 +16,5 @@ export type Jeu = {
   description: string
   border_color: string
   background_color: string
+  object_position: string
 }

@@ -79,6 +79,17 @@ export const jeuxType = defineType({
           invert: false,
         }),
     }),
+    defineField({
+      name: 'object_position',
+      title: "Position de l'image",
+      type: 'string',
+      description: "Position de l'image — ex: 50% 0%",
+      validation: (rule) =>
+        rule.required().regex(/^(\d{1,3}%\s){1}\d{1,3}%$/, {
+          name: 'position',
+          invert: false,
+        }),
+    }),
   ],
   preview: {
     select: {
