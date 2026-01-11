@@ -14,4 +14,6 @@ export type Jeu = {
   fond_card: string
   bandeau: string
   description: string
+  border_color: string
+  background_color: string
 }

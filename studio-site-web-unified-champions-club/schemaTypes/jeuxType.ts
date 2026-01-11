@@ -57,8 +57,29 @@ export const jeuxType = defineType({
       rows: 4,
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'border_color',
+      title: 'Couleur de bordure',
+      type: 'string',
+      description: 'Couleur RGB — ex: rgb(174, 71, 242)',
+      validation: (rule) =>
+        rule.required().regex(/^rgb\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*\)$/, {
+          name: 'rgb',
+          invert: false,
+        }),
+    }),
+    defineField({
+      name: 'background_color',
+      title: 'Couleur de fond',
+      type: 'string',
+      description: 'Couleur RGB — ex: rgb(20, 20, 20)',
+      validation: (rule) =>
+        rule.required().regex(/^rgb\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*\)$/, {
+          name: 'rgb',
+          invert: false,
+        }),
+    }),
   ],
-
   preview: {
     select: {
       title: 'nom',

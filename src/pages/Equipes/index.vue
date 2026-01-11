@@ -32,7 +32,9 @@ onMounted(async () => {
       nom,
       logo,
       icone,
-      fond_card   // <-- corrigé ici
+      fond_card,
+      border_color,
+      background_color
     }
   }
 `)
@@ -131,32 +133,52 @@ const equipesParJeu = computed(() => {
       ></button>
     </div>
   </section>
-  {{ jeuFiltre }}
-  <section class="text-center mt-12 md:mt-24 mx-5 md:mx-10">
+  <section
+    class="text-center mt-12 md:mt-24 w-full sm:w-[600px] md:w-[700px] lg:w-[950px] xl:w-[1200px] xxl:w-[1300px] px-5 ssm:mx-auto"
+  >
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
       Les <span class="text-[#AE47F2]">équipes</span>
     </h2>
 
     <div v-for="jeuGroup in equipesParJeu" :key="jeuGroup.jeu._id">
-      <article class="mb-12">
-        <h3 class="text-2xl font-bold mb-4">{{ jeuGroup.jeu.nom }}</h3>
+      <article class="mb-12 sm:mb-16 lg:mb-20 flex flex-col">
+        <h3
+          class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-left uppercase font-Agrandir"
+        >
+          {{ jeuGroup.jeu.nom }}
+        </h3>
         <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center">
-          <div v-for="equipe in jeuGroup.equipes" :key="equipe._id" class="border rounded p-4 w-72">
+          <div
+            v-for="equipe in jeuGroup.equipes"
+            :key="equipe._id"
+            class="w-full ssm:px-12 relative overflow-hidden rounded"
+          >
             <img
               v-if="equipe.jeu.fond_card"
               :src="urlFor(equipe.jeu.fond_card)?.width(600).url()"
               :alt="equipe.nom"
-              class="card__Image mb-2"
+              class="w-full h-[220px] ssm:h-[250px] sm:h-[300px] md:h-[350px] lg:h-[500px] xl:h-[600px] object-cover rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] xl:rounded-[50px] overflow-hidden"
             />
-            <h4 class="font-semibold">{{ equipe.nom }}</h4>
-            <ul class="text-left">
-              <li v-for="joueur in equipe.joueurs" :key="joueur._id">
-                {{ joueur.prenom }} {{ joueur.nom }}
-              </li>
-            </ul>
-            <router-link :to="`/Equipes/${equipe._id}`">
-              <button class="mt-2 border px-3 py-1 rounded">Voir plus</button>
-            </router-link>
+            <div class="absolute inset-0 text-Blanc ssm:px-12 flex flex-col justify-between">
+              <h4
+                class="text-left pl-5 ssm:pl-8 lg:pl-12 pt-4 ssm:pt-6 lg:pt-9 text-xl ssm:text-2xl lg:text-4xl xl:text-5xl font-extrabold"
+              >
+                {{ equipe.nom }}
+              </h4>
+              <div class="flex justify-end">
+                <router-link :to="`/Equipes/${equipe._id}`">
+                  <button
+                    :style="{
+                      borderColor: equipe.jeu.border_color + ' !important',
+                      backgroundColor: equipe.jeu.background_color + ' !important',
+                    }"
+                    class="border-2 rounded rounded-br-[20px] sm:rounded-br-[30px] lg:rounded-br-[40px] xl:rounded-br-[50px] font-bold lg:text-3xl lg:px-8 lg:py-4 md:text-2xl md:px-6 md:py-3 text-lg px-5 py-2.5"
+                  >
+                    Voir plus
+                  </button>
+                </router-link>
+              </div>
+            </div>
           </div>
         </div>
       </article>
