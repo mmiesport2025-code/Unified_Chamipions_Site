@@ -24,8 +24,14 @@ export type FullEquipe = {
     pseudo: string
     nom: string
     prenom: string
-    portrait: string
-    nationalite: string
+    portrait?: {
+      _type: 'image'
+      asset: {
+        _id: string
+        url: string
+      }
+    }
+    nationalite: ('Français' | 'Anglais')[]
   }[]
 
   jeu: {

@@ -73,6 +73,13 @@ const equipesParJeu = computed(() => {
   return Array.from(map.values())
 })
 
+function colorFirstLetters(text: string) {
+  return text
+    .split(' ')
+    .map((word) => `<span class="first-letter">${word[0]}</span>${word.slice(1)}`)
+    .join(' ')
+}
+
 import EquipeCard from '@/components/EquipeCard.vue'
 </script>
 <template>
@@ -141,11 +148,7 @@ import EquipeCard from '@/components/EquipeCard.vue'
 
     <div v-for="jeuGroup in equipesParJeu" :key="jeuGroup.jeu._id">
       <article class="mb-12 sm:mb-16 lg:mb-20 flex flex-col">
-        <h3
-          class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-left uppercase font-Agrandir"
-        >
-          {{ jeuGroup.jeu.nom }}
-        </h3>
+        <h3 class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-left uppercase font-Agrandir" v-html="colorFirstLetters(jeuGroup.jeu.nom)"></h3>
         <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center">
           <EquipeCard v-for="equipe in jeuGroup.equipes" :key="equipe._id" :equipe="equipe" />
         </div>
@@ -153,3 +156,8 @@ import EquipeCard from '@/components/EquipeCard.vue'
     </div>
   </section>
 </template>
+<style>
+.first-letter {
+  color: #ae47f2;
+}
+</style>
