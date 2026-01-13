@@ -58,22 +58,24 @@ function colorFirstLetters(text: string) {
       class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-left uppercase font-Agrandir"
       v-html="colorFirstLetters(Equipe.nom)"
     ></h1>
-    <div class="flex justify-start items-center gap-4 mt-6 md:mt-12">
+    <div class="flex justify-start items-center gap-2 sm:gap-3 lg:gap-4 mt-6 md:mt-12">
       <img
-        class="w-24 h-24 object-cover"
+        class="w-12 sm:w-18 lg:w-24 h-12 sm:h-18 lg:h-24 object-cover"
         :src="urlFor(Equipe.jeu.icone)?.url()"
         alt="Logo du jeu"
       />
       <h2
-        class="text-2xl sm:text-4xl lg:text-5xl mt-4 font-bold text-left uppercase font-Agrandir"
+        class="text-2xl sm:text-4xl lg:text-5xl mt-2 sm:mt-3 lg:mt-4 font-bold text-left uppercase font-Agrandir"
         v-html="colorFirstLetters(Equipe.jeu.nom)"
       ></h2>
     </div>
     <p class="text-left">{{ Equipe.jeu.description }}</p>
-    <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-left mt-24">
+    <h2
+      class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-left mt-12 ssm:mt-16 lg:mt-20 xl:mt-24"
+    >
       Les <span class="text-[#AE47F2]">joueurs</span>
     </h2>
-    <div class="flex flex-wrap gap-[calc((100%-(480px*3))/2)] gap-y-24 justify-start">
+    <div class="flex flex-wrap gap-5 sm:gap-12 gap-y-24 justify-start">
       <JoueurCard v-for="joueur in Equipe.joueurs" :key="joueur._id" :joueur="joueur" />
     </div>
   </section>

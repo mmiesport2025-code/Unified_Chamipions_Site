@@ -140,7 +140,7 @@ import EquipeCard from '@/components/EquipeCard.vue'
     </div>
   </section>
   <section
-    class="text-center mt-12 md:mt-24 w-full sm:w-[600px] md:w-[700px] lg:w-[950px] xl:w-[1200px] xxl:w-[1300px] px-5 ssm:mx-auto"
+    class="text-center mt-12 md:mt-24 w-full sm:w-[600px] md:w-[700px] lg:w-[950px] xl:w-[1200px] xxxl:w-[1300px] px-5 ssm:mx-auto"
   >
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
       Les <span class="text-[#AE47F2]">équipes</span>
@@ -148,7 +148,10 @@ import EquipeCard from '@/components/EquipeCard.vue'
 
     <div v-for="jeuGroup in equipesParJeu" :key="jeuGroup.jeu._id">
       <article class="mb-12 sm:mb-16 lg:mb-20 flex flex-col">
-        <h3 class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-left uppercase font-Agrandir" v-html="colorFirstLetters(jeuGroup.jeu.nom)"></h3>
+        <h3
+          class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 text-left uppercase font-Agrandir"
+          v-html="colorFirstLetters(jeuGroup.jeu.nom)"
+        ></h3>
         <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center">
           <EquipeCard v-for="equipe in jeuGroup.equipes" :key="equipe._id" :equipe="equipe" />
         </div>

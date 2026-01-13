@@ -25,8 +25,8 @@ export default {
       md: '48rem', // >= 768px
       lg: '64rem', // >= 1024px
       xl: '80rem', // >= 1280px
-      '2xl': '88rem', // >= 1536px
-      xxl: '96rem', // >= 1408px
+      xxl: '88rem', // >= 1408px
+      xxxl: '96rem', // >= 1536px
       'h-sm': { raw: '(max-height: 650px)' },
     },
     extend: {
