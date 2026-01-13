@@ -13,16 +13,5 @@ export const valoReticuleType = defineType({
       description: 'Nom ou style du réticule utilisé dans Valorant',
       validation: (rule) => rule.required(),
     }),
-
-    defineField({
-      name: 'portrait',
-      title: 'Image du réticule',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      description: 'Visuel représentant le réticule',
-      validation: (rule) => rule.required(),
-    }),
   ],
 })

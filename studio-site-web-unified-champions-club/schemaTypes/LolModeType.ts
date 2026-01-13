@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 export const lolModeType = defineType({
   name: 'lolMode',
-  title: 'League of Legends |Mode de jeu',
+  title: 'League of Legends | Mode de jeu',
   type: 'document',
 
   fields: [
@@ -11,17 +11,6 @@ export const lolModeType = defineType({
       title: 'Nom du mode',
       type: 'string',
       description: 'Nom du mode de jeu (ex : Ranked, ARAM, URF)',
-      validation: (rule) => rule.required(),
-    }),
-
-    defineField({
-      name: 'portrait',
-      title: 'Visuel du mode',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      description: 'Image représentant le mode de jeu',
       validation: (rule) => rule.required(),
     }),
   ],
