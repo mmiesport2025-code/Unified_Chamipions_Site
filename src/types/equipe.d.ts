@@ -18,6 +18,7 @@ export type FullEquipe = {
   nom: string
   appartenance_au_club: boolean
   specificite: 'Masculine' | 'Feminine' | 'Mixte'
+  equipe?: FullEquipe | null
 
   joueurs: {
     _id: string
