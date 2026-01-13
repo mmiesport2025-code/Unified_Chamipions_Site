@@ -79,11 +79,11 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/Joueurs/[id]': RouteRecordInfo<
-      '/Joueurs/[id]',
-      '/Joueurs/:id',
-      { id: ParamValue<true> },
-      { id: ParamValue<false> },
+    '/Joueurs/[slug]': RouteRecordInfo<
+      '/Joueurs/[slug]',
+      '/Joueurs/:slug',
+      { slug: ParamValue<true> },
+      { slug: ParamValue<false> },
       | never
     >,
     '/MentionsLegales': RouteRecordInfo<
@@ -168,9 +168,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/Joueurs/[id].vue': {
+    'src/pages/Joueurs/[slug].vue': {
       routes:
-        | '/Joueurs/[id]'
+        | '/Joueurs/[slug]'
       views:
         | never
     }

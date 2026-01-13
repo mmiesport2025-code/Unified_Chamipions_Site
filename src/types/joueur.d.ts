@@ -14,17 +14,25 @@ export type Joueur = {
   jeu_maitrise?: {
     _id: string
     nom: string
-    logo?: string
-    icone?: string
-    fond_carde?: string
-    description?: string
+    logo: string
+    icone: string
+    fond_card: string
+    bandeau: string
+    description: string
+    border_color: string
+    background_color: string
+    object_position: string
   }
   jeux?: {
     _id: string
     nom: string
-    logo?: string
-    icone?: string
-    fond_carde?: string
-    description?: string
+    logo: string
+    icone: string
+    fond_card: string
+    bandeau: string
+    description: string
+    border_color: string
+    background_color: string
+    object_position: string
   }[]
 }
