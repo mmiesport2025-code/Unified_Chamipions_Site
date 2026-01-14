@@ -97,22 +97,30 @@ import FooterCosmetic from './image/FooterCosmetic.vue'
         </li>
         <li>
           <div class="flex gap-2 xl:gap-4 mt-1 xl:mt-5">
-            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+            <a
+              href="https://www.twitch.tv/unifiedchampions"
+              class="hover:opacity-70 active:opacity-40 transition-opacity"
               ><img class="xl:h-7 h-3" src="@/components/image/IconeTwitch.png" alt="icon twitch"
             /></a>
-            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+            <a
+              href="https://discord.com/invite/5QrHJeNA8D"
+              class="hover:opacity-70 active:opacity-40 transition-opacity"
               ><img class="xl:h-7 h-3" src="@/components/image/IconeDiscord.png" alt="icon discord"
             /></a>
-            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+            <a
+              href="https://x.com/eunifiedchamps"
+              class="hover:opacity-70 active:opacity-40 transition-opacity"
               ><img class="xl:h-7 h-3" src="@/components/image/IconeTwitter.png" alt="icon twitter"
             /></a>
-            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+            <a
+              href="https://www.instagram.com/unifiedchampionsclub/"
+              class="hover:opacity-70 active:opacity-40 transition-opacity"
               ><img
                 class="xl:h-7 h-3"
                 src="@/components/image/IconeInstagram.png"
                 alt="icon instagram"
             /></a>
-            <a href="" class="hover:opacity-70 active:opacity-40 transition-opacity"
+            <a href="https://www.tiktok.com/discover/mmi-montb%C3%A9liard?lang=ar" class="hover:opacity-70 active:opacity-40 transition-opacity"
               ><img class="xl:h-7 h-3" src="@/components/image/IconeTikTok.png" alt="icon tiktok"
             /></a>
           </div>

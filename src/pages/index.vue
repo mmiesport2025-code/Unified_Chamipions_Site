@@ -15,6 +15,7 @@ const messageQuery = `
 *[_type == "message"]{
   _id,
   texte,
+  texte_suite,
   benevole->{
     _id,
     prenom,
