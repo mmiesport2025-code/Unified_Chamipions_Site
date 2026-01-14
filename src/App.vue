@@ -28,7 +28,7 @@ const Page_actuelle = computed(() => {
 console.log(route)
 </script>
 <template>
-  <section class="font-Inter text-xs sm:text-sm lg:text-lg">
+  <section class="font-Inter text-xs sm:text-sm lg:text-lg transition-all duration-300">
     <Header />
     <!-- <main class="mt-[70px] grille"> -->
     <main :class="Page_actuelle ? 'mt-[70px] xl:mt-[120px]' : ''">

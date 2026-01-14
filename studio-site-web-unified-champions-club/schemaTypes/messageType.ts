@@ -16,7 +16,14 @@ export const messageType = defineType({
 
     defineField({
       name: 'texte',
-      title: 'Texte',
+      title: 'Début du texte',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'texte_suite',
+      title: 'Partie 2 du texte',
       type: 'string',
       validation: (rule) => rule.required(),
     }),

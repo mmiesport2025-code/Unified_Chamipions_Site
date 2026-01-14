@@ -183,30 +183,10 @@ function nextMonth() {
   }
 }
 
-function getEventsForDate(date: Date) {
-  if (!parsedEvents.value.length) return []
-
-  const dayStart = new Date(date)
-  dayStart.setHours(0, 0, 0, 0)
-
-  const dayEnd = new Date(date)
-  dayEnd.setHours(23, 59, 59, 999)
-
-  return parsedEvents.value.filter((event) => event.start <= dayEnd && event.end >= dayStart)
-}
-
 type CalendarDay = {
   date: Date
   currentMonth: boolean
 }
-
-const parsedEvents = computed(() =>
-  AllMatchs.value.map((e) => ({
-    ...e,
-    start: new Date(e.debut),
-    end: new Date(e.fin ? e.fin : e.debut),
-  })),
-)
 
 function generateCalendar(year: number, month: number): CalendarDay[] {
   const days: CalendarDay[] = []
@@ -245,6 +225,8 @@ function generateCalendar(year: number, month: number): CalendarDay[] {
 
   return days
 }
+
+import CalendarDaysCards from '@/components/CalendarDaysCards.vue'
 </script>
 <template>
   <header class="h-[calc(50vh)] h-sm:h-[calc(100vh-120px)] bg-NoirPur">
@@ -341,32 +323,37 @@ function generateCalendar(year: number, month: number): CalendarDay[] {
             month = now.getMonth()
           }
         "
+        class="text-base md:text-xl lg:text-2xl font-bold px-3 sm:px-4 lg:px-5 h-8 sm:h-10 lg:h-12 border-2 rounded-full mt-4 md:mt-12 lg:mt-24"
       >
         Aujourd’hui
       </button>
-      <div class="flex items-center justify-between mb-6">
-        <button @click="prevMonth" class="px-4 py-2 rounded border hover:bg-gray-100">
-          ← Mois précédent
-        </button>
+      <div
+        class="flex items-center justify-center xs:gap-1 sm:gap-3 mb-6 text-base xs:text-xl ssm:text-2xl sm:text-4xl lg:text-5xl font-bold"
+      >
+        <button @click="prevMonth" class="px-4 py-2 rounded hover:bg-gray-100">&lt;</button>
 
-        <h2 class="text-xl font-bold uppercase">
+        <h2 class="font-bold uppercase">
           {{
             new Date(year, month).toLocaleDateString('fr-FR', {
               month: 'long',
-              year: 'numeric',
             })
           }}
         </h2>
 
-        <button @click="nextMonth" class="px-4 py-2 rounded border hover:bg-gray-100">
-          Mois suivant →
-        </button>
+        <button @click="nextMonth" class="px-4 py-2 rounded hover:bg-gray-100">&gt;</button>
       </div>
       <div
-        class="grid gap-4 transition-all duration-300"
+        class="grid gap-1 xs:gap-2 ssm:gap-4 mx-[-10px] sm:mx-0"
         style="grid-template-columns: repeat(7, minmax(0, 1fr))"
       >
-        <div
+        <CalendarDaysCards
+          v-for="(item, index) in calendarDays"
+          :key="index"
+          :date="item.date.getDate()"
+          :DateData="item.date"
+          :currentMonth="item.currentMonth"
+        />
+        <!--
           v-for="(item, index) in calendarDays"
           :key="index"
           class="h-40 rounded-lg border flex flex-col justify-between"
@@ -376,12 +363,12 @@ function generateCalendar(year: number, month: number): CalendarDay[] {
               : 'border-gray-200 bg-gray-100 text-gray-400 opacity-40'
           "
         >
-          <!-- Jour -->
+
           <div class="text-center text-2xl font-bold">
             {{ item.date.getDate() }}
           </div>
 
-          <!-- Events -->
+
           <div v-if="item.currentMonth && getEventsForDate(item.date).length" class="space-y-1 p-2">
             <div
               v-for="event in getEventsForDate(item.date)"
@@ -389,14 +376,14 @@ function generateCalendar(year: number, month: number): CalendarDay[] {
               class="bg-purple-600 text-white rounded px-2 py-1 text-xs"
             >
               <p class="font-semibold uppercase truncate">
-                {{ event.jeu.nom }}
+                {{ event.jeu }}
               </p>
               <p class="opacity-80">
                 {{ event.gamemode.nom_reduit }}
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </article>
   </section>
