@@ -8,7 +8,7 @@ import groq from 'groq'
 import HomePageDecoration from '@/components/assets/decoration/HomePageDecoration.vue'
 import JoueurCard from '@/components/JoueurCard.vue'
 
-const TEAM_QUERY = groq`*[ _type == "equipe" && _id == $id][0]{ _id, nom, appartenance_au_club, specificite, joueurs[]->{ _id, pseudo, nom, prenom, portrait, nationalite }, jeu->{ _id, nom, logo, icone, bandeau, fond_card, description, border_color, background_color, object_position } } `
+const TEAM_QUERY = groq`*[ _type == "equipe" && _id == $id][0]{ _id, nom, appartenance_au_club, specificite, joueurs[]->{ _id, pseudo, nom, prenom, portrait, nationalite }, jeu->{ _id, nom, logo, iconeN, bandeau, fond_card, description, border_color, background_color, object_position } } `
 const route = useRoute()
 
 const Equipe = ref<FullEquipe | null>(null)
@@ -61,7 +61,7 @@ function colorFirstLetters(text: string) {
     <div class="flex justify-start items-center gap-2 sm:gap-3 lg:gap-4 mt-6 md:mt-12">
       <img
         class="w-12 sm:w-18 lg:w-24 h-12 sm:h-18 lg:h-24 object-cover"
-        :src="urlFor(Equipe.jeu.icone)?.url()"
+        :src="urlFor(Equipe.jeu.iconeN)?.url()"
         alt="Logo du jeu"
       />
       <h2
