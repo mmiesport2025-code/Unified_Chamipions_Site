@@ -15,9 +15,48 @@ function selectTri(value: number) {
 
 import type { FullMatch } from '@/types/match'
 
+const AllMatchs = ref<FullMatch[]>([])
 const OldMatchs = ref<FullMatch[]>([])
 const NewMatchs = ref<FullMatch[]>([])
 
+const MatchsQuery = `
+*[_type == "match" && debut >= now()]
+| order(debut asc)[0...5]{
+  _id,
+  nom,
+  debut,
+  fin,
+  diffusion_en_live,
+  url_live,
+  rediffusion,
+  url_rediffusion,
+
+  equipes[]->{
+    _id,
+    nom,
+    logo{
+      asset->{_id, url}
+    }
+  },
+
+  jeu->{
+    _id,
+    nom,
+    iconeB{
+      asset->{_id, url}
+    },
+    iconeN{
+      asset->{_id, url}
+    }
+  },
+
+  gamemode->{
+    _id,
+    nom_reduit,
+    nom_complet
+  }
+}
+`
 const newMatchsQuery = `
 *[_type == "match" && debut >= now()]
 | order(debut asc)[0...5]{
@@ -96,6 +135,13 @@ const oldMatchsQuery = `
 `
 
 onMounted(async () => {
+  // Tout les matchs
+  const AllMatchsRes = await fetch(
+    'https://s8s4tdl3.api.sanity.io/v2026-01-04/data/query/production?query=' +
+      encodeURIComponent(MatchsQuery),
+  )
+  const AllMatchsData = await AllMatchsRes.json()
+  AllMatchs.value = AllMatchsData.result
   // Anciens matchs
   const OldMatchsRes = await fetch(
     'https://s8s4tdl3.api.sanity.io/v2026-01-04/data/query/production?query=' +

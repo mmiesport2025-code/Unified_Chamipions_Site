@@ -44,6 +44,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/CalendrierTest': RouteRecordInfo<
+      '/CalendrierTest',
+      '/CalendrierTest',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/Candidature': RouteRecordInfo<
       '/Candidature',
       '/Candidature',
@@ -135,6 +142,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/Calendrier.vue': {
       routes:
         | '/Calendrier'
+      views:
+        | never
+    }
+    'src/pages/CalendrierTest.vue': {
+      routes:
+        | '/CalendrierTest'
       views:
         | never
     }
