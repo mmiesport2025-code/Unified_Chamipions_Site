@@ -100,7 +100,7 @@
           Bluetooth ou WiFi). Les Prestataires, responsables de traitement, sont amenés, sur la base
           de votre consentement, à collecter, utiliser, transférer, conserver vos Données dans le
           cadre de l’envoi d’informations institutionnelles ainsi que de la réalisation d’études
-          statistiques en lien avec le présent Site. Les Données enregistrées sont réservées à
+          statistiques en lien avec le présent Site.Les Données enregistrées sont réservées à
           l’usage des Prestataires et peuvent être communiquées à leurs prestataires sous-traitants.
           Les Données ainsi collectées sont conservées pour une durée de 3 ans à compter du dernier
           échange. Vos droits et les modalités de leur exercice sont détaillés ci-après dans la
@@ -267,7 +267,7 @@
           paramètres de préférence figurant dans les e-mails ou sur nos Sites, ou à l’aide de ce
           formulaire, ou en nous envoyant un e-mail grâce à la procédure décrite à la section «
           Contact ») sans que cela n’affecte le caractère légal du traitement fondé sur le
-          consentement obtenu avant son retrait.  Dans certains cas, il pourra vous être demandé de
+          consentement obtenu avant son retrait. Dans certains cas, il pourra vous être demandé de
           nous communiquer des Données à des fins de traitement, tel que décrites ci-dessus, afin
           que nous puissions vous permettre d’utiliser toutes les fonctionnalités du Site.
         </p>
