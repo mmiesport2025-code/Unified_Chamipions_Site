@@ -1,8 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue'
-
 import type { FullEquipe } from '@/types/equipe'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const equipes = ref<FullEquipe[]>([])
 
@@ -10,6 +12,10 @@ const specificiteFiltre = ref<'Masculine' | 'Feminine' | 'Mixte' | null>(null)
 const jeuFiltre = ref<string | null>(null)
 
 onMounted(async () => {
+  if (typeof route.query.jeu === 'string') {
+    jeuFiltre.value = route.query.jeu
+  }
+
   const dataset = 'production'
   const query = encodeURIComponent(`
   *[_type == "equipe"]{

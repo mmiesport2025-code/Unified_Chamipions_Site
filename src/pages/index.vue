@@ -9,6 +9,7 @@ import type { Message } from '@/types/message'
 const Messages = ref<Message[]>([])
 import type { FullMatch } from '@/types/match'
 const prochainsMatchs = ref<FullMatch[]>([])
+import { useRouter } from 'vue-router'
 
 const messageQuery = `
 *[_type == "message"]{
@@ -81,6 +82,17 @@ onMounted(async () => {
   const matchsData = await matchsRes.json()
   prochainsMatchs.value = matchsData.result
 })
+
+const router = useRouter()
+
+function goToEquipesWithGame(game: string) {
+  router.push({
+    name: '/Equipes/', // ou path: '/equipes'
+    query: {
+      jeu: game,
+    },
+  })
+}
 </script>
 <template>
   <header class="bg-NoirPur text-Blanc h-screen pt-[70px] lg:pt-[120px] block border-Blanc">
@@ -142,12 +154,30 @@ onMounted(async () => {
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6">
       Les <span class="text-[#AE47F2]">Equipes</span>
     </h2>
-    <p class="md:w-[60%] mx-auto">
+    <p class="lg:w-[60%] mx-auto">
       Nos équipes rassemblent des étudiants passionnés qui défendent fièrement les couleurs de
       l’université sur différents jeux. Entre entraînements, compétitions nationales et moments de
       cohésion, chaque roster incarne l’esprit d’équipe et la volonté de progresser ensemble.
     </p>
-    <!--Carrousel-->
+    <div class="flex flex-wrap gap-4 sm:gap-8 lg:gap-10 xl:gap-12 justify-center mt-12">
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonValorant.png')] bg-cover bg-center"
+        @click="goToEquipesWithGame('Valorant')"
+      ></button>
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonLeagueOfLegends.png')] bg-cover bg-center"
+        @click="goToEquipesWithGame('League of legends')"
+      ></button>
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonMarioKart8.png')] bg-cover bg-center"
+        @click="goToEquipesWithGame('Mario Kart 8')"
+      ></button>
+      <button
+        class="w-16 h-16 ssm:w-24 ssm:h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-xl bg-[url('@/components/image/ButtonRocketLeague.png')] bg-cover bg-center"
+        @click="goToEquipesWithGame('Rocket League')"
+      ></button>
+    </div>
+    <!--Le carrousel est annuler-->
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
@@ -216,11 +246,11 @@ onMounted(async () => {
       </div>
     </div>
   </section>
-  <section class="mt-12 md:mt-24 mx-5 md:mx-10">
+  <!-- <section class="mt-12 md:mt-24 mx-5 md:mx-10">
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Dernières <span class="text-[#AE47F2]">Actus</span>
     </h2>
-  </section>
+  </section> -->
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Prochains <span class="text-[#AE47F2]">Matchs</span>
