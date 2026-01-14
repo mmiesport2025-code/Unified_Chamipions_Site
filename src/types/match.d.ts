@@ -32,5 +32,5 @@ export type FullMatch = {
   url_rediffusion?: string
   equipes: FullEquipe[]
   jeu: FullJeu
-  gamemode?: FullGameMode
+  gamemode: GameMode
 }

@@ -24,8 +24,15 @@ export const jeuxType = defineType({
     }),
 
     defineField({
-      name: 'icone',
-      title: 'Icône',
+      name: 'iconeB',
+      title: 'Icône version blanche',
+      type: 'image',
+      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'iconeN',
+      title: 'Icône version noire',
       type: 'image',
       validation: (rule) => rule.required(),
     }),

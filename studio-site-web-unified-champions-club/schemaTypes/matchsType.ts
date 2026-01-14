@@ -42,7 +42,6 @@ export const matchType = defineType({
       title: 'URL live',
       type: 'url',
       description: 'Lien vers la diffusion en direct (si applicable)',
-      validation: (rule) => rule.required(),
     }),
 
     defineField({
@@ -67,7 +66,6 @@ export const matchType = defineType({
       of: [{type: 'reference', to: [{type: 'equipe'}]}],
       description: 'Équipes participant au match',
       validation: (rule) => rule.required(),
-      initialValue: ['unknown', 'unknown'],
     }),
 
     defineField({

@@ -7,8 +7,10 @@ import Cardanecdotes from '@/components/Cardanecdotes.vue'
 import { ref, onMounted } from 'vue'
 import type { Message } from '@/types/message'
 const Messages = ref<Message[]>([])
+import type { FullMatch } from '@/types/match'
+const prochainsMatchs = ref<FullMatch[]>([])
 
-const query = `
+const messageQuery = `
 *[_type == "message"]{
   _id,
   texte,
@@ -23,14 +25,61 @@ const query = `
 }
 `
 
-onMounted(async () => {
-  const res = await fetch(
-    'https://s8s4tdl3.api.sanity.io/v2026-01-04/data/query/production?query=' +
-      encodeURIComponent(query),
-  )
+const matchsQuery = `
+*[_type == "match" && debut >= now()]
+| order(debut asc)[0...5]{
+  _id,
+  nom,
+  debut,
+  fin,
+  diffusion_en_live,
+  url_live,
+  rediffusion,
+  url_rediffusion,
 
-  const data = await res.json()
-  Messages.value = data.result
+  equipes[]->{
+    _id,
+    nom,
+    logo{
+      asset->{_id, url}
+    }
+  },
+
+  jeu->{
+    _id,
+    nom,
+    iconeB{
+      asset->{_id, url}
+    },
+    iconeN{
+      asset->{_id, url}
+    }
+  },
+
+  gamemode->{
+    _id,
+    nom_reduit,
+    nom_complet
+  }
+}
+`
+
+onMounted(async () => {
+  // Messages
+  const messagesRes = await fetch(
+    'https://s8s4tdl3.api.sanity.io/v2026-01-04/data/query/production?query=' +
+      encodeURIComponent(messageQuery),
+  )
+  const messagesData = await messagesRes.json()
+  Messages.value = messagesData.result
+
+  // Prochains matchs
+  const matchsRes = await fetch(
+    'https://s8s4tdl3.api.sanity.io/v2026-01-04/data/query/production?query=' +
+      encodeURIComponent(matchsQuery),
+  )
+  const matchsData = await matchsRes.json()
+  prochainsMatchs.value = matchsData.result
 })
 </script>
 <template>
@@ -104,6 +153,7 @@ onMounted(async () => {
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">
       Qui <span class="text-[#AE47F2]">Sommes</span> nous ?
     </h2>
+
     <div class="flex flex-col md:flex-row gap-6 block">
       <div
         class="w-full md:w-[400px] xl:w-auto h-40 md:h-[300px] xl:min-h-[400px] xl:h-[400px] flex flex-col gap-5 px-5 md:px-0 order-1"
@@ -176,10 +226,14 @@ onMounted(async () => {
       Prochains <span class="text-[#AE47F2]">Matchs</span>
     </h2>
     <div class="flex flex-col gap-6">
-      <CalendarEventBar :LeProchain="true" />
-      <CalendarEventBar />
-      <CalendarEventBar />
+      <CalendarEventBar
+        v-for="(match, index) in prochainsMatchs"
+        :key="match._id"
+        :match="match"
+        :LeProchain="index === 0"
+      />
     </div>
+    <ButtonWithArrow text="En savoir plus" link="/Calendrier" class="mt-8 mx-auto" />
   </section>
   <section class="mt-12 md:mt-24 mx-5 md:mx-10">
     <h2 class="uppercase font-Agrandir text-2xl sm:text-4xl lg:text-5xl mb-6 text-center">

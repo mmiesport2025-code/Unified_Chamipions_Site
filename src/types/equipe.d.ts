@@ -39,7 +39,8 @@ export type FullEquipe = {
     _id: string
     nom: string
     logo: string
-    icone: string
+    iconeB: string
+    iconeN: string
     bandeau: string
     fond_card: string
     description: string

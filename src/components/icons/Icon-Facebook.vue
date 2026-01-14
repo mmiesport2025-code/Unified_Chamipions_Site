@@ -1,10 +1,9 @@
-<template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 48 48"
-    id="Facebook-1--Streamline-Plump"
-  >
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 48 48"
+  id="Facebook-1--Streamline-Plump"
+>
     <desc>Facebook 1 Streamline Icon: https://streamlinehq.com</desc>
     <g id="facebook-1--media-facebook-social">
       <path
@@ -15,4 +14,3 @@
       ></path>
     </g>
   </svg>
-</template>

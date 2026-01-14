@@ -39,7 +39,8 @@ export type Joueur = {
     _id: string
     nom: string
     logo: string
-    icone: string
+    iconeB: string
+    iconeN: string
     fond_card: string
     bandeau: string
     description: string
@@ -53,7 +54,8 @@ export type Joueur = {
     _id: string
     nom: string
     logo: string
-    icone: string
+    iconeB: string
+    iconeN: string
     fond_card: string
     bandeau: string
     description: string
