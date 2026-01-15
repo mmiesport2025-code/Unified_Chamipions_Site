@@ -10,7 +10,7 @@ defineProps<{
 const isOpen = ref(false)
 </script>
 <template>
-  <div class="p-5 pb-2 rounded-3xl bg-GrisFonce text-Blanc border border-Gris flex">
+  <div class="p-5 pb-2 rounded-3xl bg-GrisFonce text-Blanc border border-Gris flex h-fit">
     <img
       class="min-w-10 xs:min-w-14 sm:min-w-20 h-10 xs:h-14 sm:h-20 object-cover rounded-full mr-5"
       :src="message.benevole.portrait?.asset.url"
