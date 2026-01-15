@@ -312,96 +312,234 @@ function colorLastWord(text: string) {
           v-if="Joueur?.jeu_maitrise?.nom === 'Valorant'"
           class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-6"
         >
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.valoAgent,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Top agents')"
             ></h2>
+            <div class="flex gap-2 mt-3 overflow-x-auto w-full">
+              <div
+                v-for="Agent in Joueur.valoAgent"
+                :key="Agent._id"
+                class="flex flex-col justify-between items-center w-full"
+              >
+                <img
+                  class="object-cover border border-Violet700 rounded-full w-10 h-10 object-top"
+                  :src="urlFor(Agent.portrait)?.url()"
+                  :alt="`Portrait de ${Agent.name}`"
+                  :style="{ objectPosition: Agent.name }"
+                />
+                <p class="text-center mt-1">{{ Agent.name }}</p>
+              </div>
+            </div>
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col relative"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.valoMap,
+            }"
+          >
+            <img
+              v-if="Joueur.valoMap"
+              class="absolute inset-0 w-full h-full object-cover z-0"
+              :src="urlFor(Joueur.valoMap?.portrait)?.url()"
+              :alt="`Portrait de ${Joueur.valoMap?.name ?? ''}`"
+            />
             <h2
-              class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
+              class="relative text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase relative p-3 ssm:p-5"
               v-html="colorLastWord('Map Favorite')"
             ></h2>
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.valoArme,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase whitespace-normal break-words"
               v-html="colorLastWord('Arme Favorite')"
             ></h2>
+            <img
+              v-for="arme in Joueur.valoArme"
+              :key="arme._id"
+              class="w-full h-auto my-auto object-cover z-0"
+              :src="urlFor(arme.portrait)?.url()"
+              :alt="`Portrait de ${arme.name ?? ''}`"
+            />
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.valoSkin,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Skin Favoris')"
             ></h2>
+            <img
+              v-for="skin in Joueur.valoSkin"
+              :key="skin._id"
+              class="w-full h-auto my-auto object-cover z-0"
+              :src="urlFor(skin.portrait)?.url()"
+              :alt="`Portrait de ${skin.name ?? ''}`"
+            />
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.valoRank,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Rank actuel')"
             ></h2>
+            <img
+              v-if="Joueur.valoRank"
+              class="h-20 w-20 m-auto object-cover z-0"
+              :src="urlFor(Joueur.valoRank?.portrait)?.url()"
+              :alt="`Portrait de ${Joueur.valoRank.name ?? ''}`"
+            />
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center':
+                !Joueur.valoReticule,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Réticule utilisé')"
             ></h2>
+            <p v-if="Joueur.valoReticule" class="break-all">{{ Joueur.valoReticule.name }}</p>
           </div>
         </div>
         <div
           v-if="Joueur?.jeu_maitrise?.nom === 'League of legends'"
           class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-6"
         >
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.lolMain,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Top 3 Champions')"
             ></h2>
-            <div class="flex">
+            <div class="flex gap-2 mt-3 overflow-x-auto w-full">
               <div
-                v-for="main in Joueur.lolMain"
-                :key="main._id"
-                class="flex flex-col items-center"
+                v-for="Main in Joueur.lolMain"
+                :key="Main._id"
+                class="flex flex-col justify-between items-center w-full"
               >
                 <img
-                  class="w-16 h-16 object-cover"
-                  :src="urlFor(main.portrait)?.url()"
-                  :alt="`Portrait de ${main.name}`"
+                  class="object-cover border border-Violet700 rounded-full w-10 h-10 object-top"
+                  :src="urlFor(Main.portrait)?.url()"
+                  :alt="`Portrait de ${Main.name}`"
+                  :style="{ objectPosition: Main.name }"
                 />
-                <p>{{ main.name }}</p>
+                <p class="text-center mt-1">{{ Main.name }}</p>
               </div>
             </div>
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.lolSkin,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Skins Favoris')"
             ></h2>
+            <div class="flex gap-2 mt-3 overflow-x-auto w-full">
+              <div
+                v-for="Skin in Joueur.lolSkin"
+                :key="Skin._id"
+                class="flex flex-col justify-between items-center w-full"
+              >
+                <img
+                  class="object-cover border border-Violet700 rounded-full w-10 h-10 object-top"
+                  :src="urlFor(Skin.portrait)?.url()"
+                  :alt="`Portrait de ${Skin.name}`"
+                  :style="{ objectPosition: Skin.name }"
+                />
+                <p class="text-center mt-1">{{ Skin.name }}</p>
+              </div>
+            </div>
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center':
+                !Joueur.lolPositionnement,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase whitespace-normal break-words"
               v-html="colorLastWord('Positionnement en match')"
             ></h2>
+            <p v-if="Joueur.lolPositionnement" class="m-auto">
+              {{ Joueur.lolPositionnement.name }}
+            </p>
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.lolRank,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Rank Actuel')"
             ></h2>
+            <img
+              v-if="Joueur.lolRank"
+              class="h-20 w-20 m-auto object-cover z-0"
+              :src="urlFor(Joueur.lolRank?.portrait)?.url()"
+              :alt="`Portrait de ${Joueur.lolRank.name ?? ''}`"
+            />
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.lolMode,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Mode de jeu préféré')"
             ></h2>
+            <p v-for="Mode in Joueur.lolMode" :key="Mode._id" class="m-auto">
+              {{ Mode.name }}
+            </p>
           </div>
-          <div class="border-2 h-40 flex flex-col p-3 ssm:p-5">
+          <div
+            class="border-2 h-40 flex flex-col p-3 ssm:p-5"
+            :class="{
+              'bg-[url(@/components/image/PlaceHolder.png)] bg-cover bg-center': !Joueur.lolItem,
+            }"
+          >
             <h2
               class="text-sm ssm:text-base md:text-xl xxl:text-2xl font-semibold uppercase"
               v-html="colorLastWord('Items favoris')"
             ></h2>
+            <img
+              v-if="Joueur.lolItem"
+              class="h-20 w-20 m-auto object-cover z-0"
+              :src="urlFor(Joueur.lolItem?.portrait)?.url()"
+              :alt="`Portrait de ${Joueur.lolItem.name ?? ''}`"
+            />
           </div>
         </div>
       </div>
